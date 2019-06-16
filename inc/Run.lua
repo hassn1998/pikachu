@@ -2,11 +2,11 @@
 ─▄█▀█▄──▄███▄─
 ▐█░██████████▌
 ─██▒█████████─
-──▀████████▀──┊@hlh313
+──▀████████▀──┊@Ha_ssin
 ─────▀██▀─────
-┊ＭᎯẊ ‿ @hlh_313
+┊pikachu ‿ @Ha_ssin
 تم تطوير وبرمجة السورس من قبل حسوني ┊
-┊@hlh313 ‿ @hlh_313 
+┊@Ha_ssin ‿ @Ha_ssin 
 #-------------------------------------------------------------------
 ]]
 Er_cjson , JSON  = pcall(require, "cjson")
@@ -90,13 +90,13 @@ print('\n\27[1;31m￤ USERNAME is Incorrect Please Check it!\n￤ لآ يوجد 
 create_config(Token)
 end  
 print('\n\27[1;36m￤تم آدخآل مـعرف آلمـطـور بنجآح , سـوف يتم تشـغيل آلسـورس آلآن .\n￤Success Save USERNAME IS_ID: \27[0;32m['..GetUser.information.id..']\n\27[0;39;49m')
-max = Token:match("(%d+)")
-redis:set(max..":VERSION",GetUser.information.Source_version)
-redis:set(max..":SUDO_ID:",GetUser.information.id)
-redis:set(max..":DataCenter:",GetUser.information.DataCenter)
-redis:set(max..":UserNameBot:",BOT_User)
-redis:set(max..":NameBot:",BOT_NAME)
-redis:hset(max..'username:'..GetUser.information.id,'username','@'..GetUser.information.username:gsub('_',[[\_]]))
+pikachu = Token:match("(%d+)")
+redis:set(pikachu..":VERSION",GetUser.information.Source_version)
+redis:set(pikachu..":SUDO_ID:",GetUser.information.id)
+redis:set(pikachu..":DataCenter:",GetUser.information.DataCenter)
+redis:set(pikachu..":UserNameBot:",BOT_User)
+redis:set(pikachu..":NameBot:",BOT_NAME)
+redis:hset(pikachu..'username:'..GetUser.information.id,'username','@'..GetUser.information.username:gsub('_',[[\_]]))
 redis:set("TH3max_INSTALL","Yes")
 info = {}
 info.username = '@'..GetUser.information.username
@@ -127,11 +127,11 @@ print('\27[0;33m>>'..[[
 ─▄█▀█▄──▄███▄─
 ▐█░██████████▌
 ─██▒█████████─
-──▀████████▀──┊@hlh313
+──▀████████▀──┊@Ha_ssin
 ─────▀██▀─────
-┊ＭᎯẊ ‿ @hlh_313
+┊pikachu ‿ @Ha_ssin
 تم تطوير وبرمجة السورس من قبل حسوني ┊
-┊@hlh313 ‿ @hlh_313 
+┊@Ha_ssin ‿ @Ha_ssin 
 -------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config() 
@@ -140,13 +140,13 @@ Token = TokenBot:read('*a')
 File = {}
 local login = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 max = Token:match("(%d+)")
-our_id = tonumber(max)
+our_id = tonumber(pikachu)
 ApiToken = "https://api.telegram.org/bot"..Token
-Bot_User = redis:get(max..":UserNameBot:")
-SUDO_ID = tonumber(redis:get(max..":SUDO_ID:"))
-SUDO_USER = redis:hgetall(max..'username:'..SUDO_ID).username
-version = redis:get(max..":VERSION")
-DataCenter = redis:get(max..":DataCenter:")
+Bot_User = redis:get(pikachu..":UserNameBot:")
+SUDO_ID = tonumber(redis:get(pikachu..":SUDO_ID:"))
+SUDO_USER = redis:hgetall(pikachu..'username:'..SUDO_ID).username
+version = redis:get(pikachu..":VERSION")
+DataCenter = redis:get(pikachu..":DataCenter:")
 
 local ok, ERROR =  pcall(function() loadfile("./inc/functions.lua")() end)
 if not ok then 
@@ -164,16 +164,16 @@ print('\27[0;33m>>'..[[
 ─▄█▀█▄──▄███▄─
 ▐█░██████████▌
 ─██▒█████████─
-──▀████████▀──┊@hlh313
+──▀████████▀──┊@Ha_ssin
 ─────▀██▀─────
-┊ＭᎯẊ ‿ @hlh_313
+┊pikachu ‿ @Ha_ssin
 تم تطوير وبرمجة السورس من قبل حسوني ┊
-┊@hlh313 ‿ @hlh_313 
+┊@Ha_ssin ‿ @Ha_ssin 
 -------------------------------------------------------------------
                                                   
 ]]..'\027[0;32m'
 ..'¦ TOKEN_BOT: \27[1;34m'..Token..'\027[0;32m\n'
-..'¦ BOT__INFO: \27[1;34m'.. Bot_User..'\27[0;36m » ('..max..')\027[0;32m\n'
+..'¦ BOT__INFO: \27[1;34m'.. Bot_User..'\27[0;36m » ('..pikachu..')\027[0;32m\n'
 ..'¦ INFO_SUDO: \27[1;34m'..SUDO_USER:gsub([[\_]],'_')..'\27[0;36m » ('..SUDO_ID..')\27[m\027[0;32m\n'
 ..'¦ Run_Scrpt: \27[1;34m./inc/Script.lua\027[0;32m \n'
 ..'¦ LOGIN__IN: \27[1;34m'..login..'\027[0;32m \n'
@@ -231,19 +231,19 @@ end
 if msg.reply_to_message_id_ ~= 0 then msg.reply_id = msg.reply_to_message_id_ end
 msg.type = GetType(msg.chat_id_)
 
-if msg.type == "pv" and redis:get(max..':mute_pv:'..msg.chat_id_) then
+if msg.type == "pv" and redis:get(pikachu..':mute_pv:'..msg.chat_id_) then
 print('\27[1;31m is_MUTE_BY_FLOOD\27[0m')
 return false 
 end
 
-if redis:get(max..'sender:'..msg.sender_user_id_..':flood') then
+if redis:get(pikachu..'sender:'..msg.sender_user_id_..':flood') then
 print("\27[1;31mThis Flood Sender ...\27[0")
 Del_msg(msg.chat_id_,msg.id_)
 return false
 end
 
 
-if redis:get(max..'group:add'..msg.chat_id_) then 
+if redis:get(pikachu..'group:add'..msg.chat_id_) then 
 msg.GroupActive = true
 else
 msg.GroupActive = false
@@ -334,7 +334,7 @@ return false
 end
 
 if not msg.Admin then
-if redis:get(max..'mute_text'..msg.chat_id_) then --قفل الدردشه
+if redis:get(pikachu..'mute_text'..msg.chat_id_) then --قفل الدردشه
 print("\27[1;31m Chat is Mute \27[0m")
 Del_msg(msg.chat_id_,msg.id_)
 return false 
@@ -345,17 +345,17 @@ return false
 end 
 end 
 
-if ScriptFile and ScriptFile.max then 
-if msg.text and ScriptFile.imax then
-for k, max in pairs(ScriptFile.max) do
-local SearchText = msg.text:match(max)
+if ScriptFile and ScriptFile.pikachu then 
+if msg.text and ScriptFile.ipikachu then
+for k, max in pairs(ScriptFile.pikachu) do
+local SearchText = msg.text:match(pikachu)
 if SearchText then
 if not CheckFlood(msg) then
 return false 
 end
-local GetMsg = ScriptFile.imax(msg,{msg.text:match(max)})
+local GetMsg = ScriptFile.imax(msg,{msg.text:match(pikachu)})
 if GetMsg then
-print("\27[1;35m¦This_Msg : ",max.." | Plugin is: \27[1;32mScript.lua\27[0m")
+print("\27[1;35m¦This_Msg : ",pikachu.." | Plugin is: \27[1;32mScript.lua\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
 return false
 end 
@@ -370,17 +370,17 @@ print("\27[1;35m¦Msg_IN_Process : Proc _ Script.lua\27[0m")
 end
 
 for name,Plug in pairs(File) do
-if Plug.max then 
+if Plug.pikachu then 
 if msg.text and Plug.imax then
-for k, max in pairs(Plug.max) do
-local SearchText = msg.text:match(max)
+for k, pikachu in pairs(Plug.pikachu) do
+local SearchText = msg.text:match(pikachu)
 if SearchText then
 if not CheckFlood(msg) then
 return false
 end
-local GetMsg = Plug.imax(msg,{msg.text:match(max)})
+local GetMsg = Plug.imax(msg,{msg.text:match(pikachu)})
 if GetMsg then
-print("\27[1;35m¦This_Msg : ",max.." | Plugin is: \27[1;32m"..name.."\27[0m")
+print("\27[1;35m¦This_Msg : ",pikachu.." | Plugin is: \27[1;32m"..name.."\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
 end 
 return false
@@ -407,7 +407,7 @@ function tdcli_update_callback(data)
 
 	if data.ID == "UpdateMessageSendFailed" then 
     if msg.sender_user_id_ then
-	redis:srem(max..'users',msg.sender_user_id_)
+	redis:srem(pikachu..'users',msg.sender_user_id_)
 	end
 	elseif data.ID == "UpdateMessageSendSucceeded" then
 	if Refresh_Start then
@@ -419,15 +419,15 @@ function tdcli_update_callback(data)
 	UpdateSourceStart = false
 	EditMsg(data.message_.chat_id_,data.message_.id_,'10% - |█          |')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'20% - |███         |')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/MAXTELE/pikachu/master/inc/Run.lua','./inc/Run.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'40% - |█████       |')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/MAXTELE/pikachu/master/inc/locks.lua','./inc/locks.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'60% - |███████     |')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/MAXTELE/pikachu/master/inc/Script.lua','./inc/Script.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'80% - |█████████   |')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/plugins/games.lua','./plugins/games.lua')
+	download_file('https://raw.githubusercontent.com/MAXTELE/pikachu/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/MAXTELE/pikachu/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/MAXTELE/pikachu/master/plugins/games.lua','./plugins/games.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'100% - |█████████████|\n\n🔝*¦* السورس الى اصدار \n📟*¦* تم اعاده تشغيل السورس بنجاح')
 	dofile("./inc/Run.lua")
 	print("Update Source And Reload ~ ./inc/Run.lua")
@@ -527,7 +527,7 @@ function tdcli_update_callback(data)
 	Del_msg(msg.chat_id_,msg.id_)
 	end
 	elseif msg.content_.ID == "MessageChatAddMembers" then
-	if redis:get(max..'group:add'..msg.chat_id_) and (msg.sender_user_id_ == SUDO_ID or redis:sismember(max..':SUDO_BOT:',msg.sender_user_id_) or redis:sismember(max..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(max..'owners:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(max..'admins:'..msg.chat_id_,msg.sender_user_id_)) then 
+	if redis:get(max..'group:add'..msg.chat_id_) and (msg.sender_user_id_ == SUDO_ID or redis:sismember(pikachu..':SUDO_BOT:',msg.sender_user_id_) or redis:sismember(pikachu..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(pikachu..'owners:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(max..'admins:'..msg.chat_id_,msg.sender_user_id_)) then 
 	msg.Admin = true
 	end
 	local lock_bots = redis:get(max..'lock_bots'..msg.chat_id_)
@@ -542,7 +542,7 @@ function tdcli_update_callback(data)
 	end
 	end
 	end
-	if redis:get(max..'mute_tgservice'..msg.chat_id_) then
+	if redis:get(pikachu..'mute_tgservice'..msg.chat_id_) then
 	Del_msg(msg.chat_id_,msg.id_)
 	end
 	if ZISBOT and redis:get(max..'lock_bots_by_kick'..msg.chat_id_) then
@@ -595,40 +595,40 @@ function tdcli_update_callback(data)
 	local All_Groups = JSON.decode(GetInfo)
 	for k,IDS in pairs(All_Groups.Groups) do
 	redis:mset(
-	max..'group:name'..k,IDS.Title,
-	max..'num_msg_max'..k,5,
-	max..'group:add'..k,true,
-	max..'lock_link'..k,true,
-	max..'lock_spam'..k,true,
-	max..'lock_webpage'..k,true,
-	max..'lock_markdown'..k,true,
-	max..'lock_flood'..k,true,
-	max..'lock_bots'..k,true,
-	max..'mute_forward'..k,true,
-	max..'mute_contact'..k,true,
-	max..'mute_document'..k,true,
-	max..'mute_inline'..k,true,
-	max..'lock_username'..k,true,
-	max..'replay'..k,true
+	pikachu..'group:name'..k,IDS.Title,
+	pikachu..'num_msg_max'..k,5,
+	pikachu..'group:add'..k,true,
+	pikachu..'lock_link'..k,true,
+	pikachu..'lock_spam'..k,true,
+	pikachu..'lock_webpage'..k,true,
+	pikachu..'lock_markdown'..k,true,
+	pikachu..'lock_flood'..k,true,
+	pikachu..'lock_bots'..k,true,
+	pikachu..'mute_forward'..k,true,
+	pikachu..'mute_contact'..k,true,
+	pikachu..'mute_document'..k,true,
+	pikachu..'mute_inline'..k,true,
+	pikachu..'lock_username'..k,true,
+	pikachu..'replay'..k,true
 	)
 	redis:sadd(max..'group:ids',k) 
 
 	if IDS.Admins then
 	for user,ID in pairs(IDS.Admins) do
-	redis:hset(max..'username:'..ID,'username',user)
-	redis:sadd(max..'admins:'..k,ID)
+	redis:hset(pikachu..'username:'..ID,'username',user)
+	redis:sadd(pikachu..'admins:'..k,ID)
 	end
 	end
 	if IDS.Creator then
 	for user,ID in pairs(IDS.Creator) do
-	redis:hset(max..'username:'..ID,'username',user)
-	redis:sadd(max..':MONSHA_BOT:'..k,ID)
+	redis:hset(pikachu..'username:'..ID,'username',user)
+	redis:sadd(pikachu..':MONSHA_BOT:'..k,ID)
 	end
 	end
 	if IDS.Owner then
 	for user,ID in pairs(IDS.Owner) do
-	redis:hset(max..'username:'..ID,'username',user)
-	redis:sadd(max..'owners:'..k,ID)
+	redis:hset(pikachu..'username:'..ID,'username',user)
+	redis:sadd(pikachu..'owners:'..k,ID)
 	end
 	end
 	end
@@ -638,9 +638,9 @@ function tdcli_update_callback(data)
 	elseif data.ID == "UpdateUser" then  
 	if data.user_.type_.ID == "UserTypeDeleted" then
 	print("¦ userTypeDeleted")
-	redis:srem(max..'users',data.user_.id_)
+	redis:srem(pikachu..'users',data.user_.id_)
 	elseif data.user_.type_.ID == "UserTypeGeneral" then
-	local CheckUser = redis:hgetall(max..'username:'..data.user_.id_).username
+	local CheckUser = redis:hgetall(pikachu..'username:'..data.user_.id_).username
 	if data.user_.username_  then 
 	USERNAME = '@'..data.user_.username_:gsub('_',[[\_]])
 	else
@@ -660,7 +660,7 @@ function tdcli_update_callback(data)
 	end,nil)
 	elseif data.ID == "UpdateOption" and data.value_.value_ == "Ready" then
 	print(" ||  ------------------------[ Loading For loding list Chat ]--------------------- ||")
-	local groups = redis:smembers(max..'group:ids')
+	local groups = redis:smembers(pikachu..'group:ids')
 	local GroupsIsFound = 0
 	for i = 1, #groups do 
 	GroupTitle(groups[i],function(arg,data)
@@ -680,7 +680,7 @@ function tdcli_update_callback(data)
 	print(GroupsIsFound..' : '..#groups..' : '..i)
 	if #groups == i then
 	
-	local pv = redis:smembers(max..'users')
+	local pv = redis:smembers(pikachu..'users')
 	local NumPvDel = 0
 	for i = 1, #pv do
 	GroupTitle(pv[i],function(arg,data)
