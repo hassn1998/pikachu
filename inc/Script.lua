@@ -2,14 +2,14 @@
 ─▄█▀█▄──▄███▄─
 ▐█░██████████▌
 ─██▒█████████─
-──▀████████▀──┊@hlh313
+──▀████████▀──┊@Ha_ssin
 ─────▀██▀─────
-┊ＭᎯẊ ‿ @hlh_313
+┊pikachu‿ @Ha_ssin
 تم تطوير وبرمجة السورس من قبل حسوني ┊
-┊@hlh313 ‿ @hlh_313 
+┊@Ha_ssin ‿ @Ha_ssin 
 #-------------------------------------------------------------------
 ]]
-local function imax(msg,MsgText)
+local function ipikachu(msg,MsgText)
 
 if msg.type ~= 'pv' then
 
@@ -29,11 +29,11 @@ if MsgText[1] == 'شحن' and MsgText[2] then
 if not msg.SudoUser then return "♦️*┇*هذا الامر يخص {المطور} فقط  \n💥" end
 if tonumber(MsgText[2]) > 0 and tonumber(MsgText[2]) < 1001 then
 local extime = (tonumber(MsgText[2]) * 86400)
-redis:setex(max..'ExpireDate:'..msg.chat_id_, extime, true)
-if not redis:get(max..'CheckExpire::'..msg.chat_id_) then 
-redis:set(max..'CheckExpire::'..msg.chat_id_,true) end
+redis:setex(pikachu..'ExpireDate:'..msg.chat_id_, extime, true)
+if not redis:get(pikachu..'CheckExpire::'..msg.chat_id_) then 
+redis:set(pikachu..'CheckExpire::'..msg.chat_id_,true) end
 sendMsg(msg.chat_id_,msg.id_,'💂🏻‍♀️┇تم شحن الاشتراك الى `'..MsgText[2]..'` يوم   ... 👍🏿')
-sendMsg(SUDO_ID,0,'💂🏻‍♀️┇تم شحن الاشتراك الى `'..MsgText[2]..'` يوم   ... 👍🏿\n🕵🏼️‍♀️┇في مجموعه  » »  '..redis:get(max..'group:name'..msg.chat_id_))
+sendMsg(SUDO_ID,0,'💂🏻‍♀️┇تم شحن الاشتراك الى `'..MsgText[2]..'` يوم   ... 👍🏿\n🕵🏼️‍♀️┇في مجموعه  » »  '..redis:get(pikachu..'group:name'..msg.chat_id_))
 else
 sendMsg(msg.chat_id_,msg.id_,'💂🏻‍♀️┇عزيزي المطور ✋🏿\n👨🏻‍🔧┇شحن الاشتراك يكون ما بين يوم الى 1000 يوم فقط 🍃')
 end 
@@ -43,17 +43,17 @@ end
 if MsgText[1] == 'الاشتراك' and MsgText[2] then 
 if not msg.SudoUser then return "♦️*┇*هذا الامر يخص {المطور} فقط  \n💥" end
 if MsgText[2] == '1' then
-redis:setex(max..'ExpireDate:'..msg.chat_id_, 2592000, true)
-if not redis:get(max..'CheckExpire::'..msg.chat_id_) then 
-redis:set(max..'CheckExpire::'..msg.chat_id_,true) 
+redis:setex(pikachu..'ExpireDate:'..msg.chat_id_, 2592000, true)
+if not redis:get(pikachu..'CheckExpire::'..msg.chat_id_) then 
+redis:set(pikachu..'CheckExpire::'..msg.chat_id_,true) 
 end
 sendMsg(msg.chat_id_,msg.id_,'💂🏻‍♀️┇تم تفعيل الاشتراك   👍🏿\n📆┇ الاشتراك » `30 يوم`  *(شهر)*')
 sendMsg(SUDO_ID,0,'💂🏻‍♀️┇تم تفعيل الاشتراك  👍🏿\n📆┇ الاشتراك » `30 يوم`  *(شهر)*')
 end
 if MsgText[2] == '2' then
-redis:setex(max..'ExpireDate:'..msg.chat_id_,7776000,true)
-if not redis:get(max..'CheckExpire::'..msg.chat_id_) then 
-redis:set(max..'CheckExpire::'..msg.chat_id_,true) 
+redis:setex(pikachu..'ExpireDate:'..msg.chat_id_,7776000,true)
+if not redis:get(pikachu..'CheckExpire::'..msg.chat_id_) then 
+redis:set(pikachu..'CheckExpire::'..msg.chat_id_,true) 
 end
 sendMsg(msg.chat_id_,msg.id_,'💂🏻‍♀️┇تم تفعيل الاشتراك   👍🏿\n📆┇ الاشتراك » `90 يوم`  *(3 اشهر)*')
 sendMsg(SUDO_ID,0,'💂🏻‍♀️┇تم تفعيل الاشتراك   👍🏿\n📆┇ الاشتراك » `90 يوم`  *(3 اشهر)*')
@@ -61,7 +61,7 @@ end
 if MsgText[2] == '3' then
 redis:set(max..'ExpireDate:'..msg.chat_id_,true)
 if not redis:get(max..'CheckExpire::'..msg.chat_id_) then 
-redis:set(max..'CheckExpire::'..msg.chat_id_,true) end
+redis:set(pikachu..'CheckExpire::'..msg.chat_id_,true) end
 sendMsg(msg.chat_id_,msg.id_,'💂🏻‍♀️┇تم تفعيل الاشتراك   👍🏿\n📆┇ الاشتراك » `مفتوح`  *(مدى الحياة)*')
 sendMsg(SUDO_ID,0,'💂🏻‍♀️┇تم تفعيل الاشتراك   👍🏿\n📆┇ الاشتراك » `مفتوح`  *(مدى الحياة)*')
 end 
@@ -103,7 +103,7 @@ if MsgText[1] == "المجموعه" then
 if not msg.Admin then return "♦️*┇*هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n💥" end
 GetFullChat(msg.chat_id_,function(arg,data)
 local GroupName = (redis:get(max..'group:name'..msg.chat_id_) or '')
-redis:set(max..'linkGroup'..msg.chat_id_,(data.invite_link_ or ""))
+redis:set(pikachu..'linkGroup'..msg.chat_id_,(data.invite_link_ or ""))
 return sendMsg(msg.chat_id_,msg.id_,
 "👨🏻‍💻┇ ❪ مـعـلومـات الـمـجـموعـه ❫\n\n"
 .."*👥┇* عدد الاعـضـاء ⇜ ❪ *"..data.member_count_.."* ❫"
@@ -203,7 +203,7 @@ end
 end
 if MsgText[1] == "فحص البوت" then
 if not msg.Director then return "♦️*┇*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
-local Chek_Info = https.request('https://api.telegram.org/bot'..Token..'/getChatMember?chat_id='.. msg.chat_id_ ..'&user_id='.. max..'')
+local Chek_Info = https.request('https://api.telegram.org/bot'..Token..'/getChatMember?chat_id='.. msg.chat_id_ ..'&user_id='.. pikachu..'')
 local Json_Info = JSON.decode(Chek_Info)
 if Json_Info.ok == true then
 if Json_Info.result.status == "administrator" then
@@ -237,7 +237,7 @@ message_id_ = msg.reply_id,
 disable_notification_ = 1},
 function(arg,data)
 if data.ID == "Ok" then
-redis:set(max..":MsgIDPin:"..msg.chat_id_,msg.reply_id)
+redis:set(pikachu..":MsgIDPin:"..msg.chat_id_,msg.reply_id)
 return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.." \n📌*┇* تم تثبيت الرساله \n✓")
 elseif data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* عذرا لا يمكنني التثبيت .\n🎟*┇* لست مشرف او لا املك صلاحيه التثبيت \n 💥')    
@@ -249,7 +249,7 @@ end
 
 if MsgText[1] == "الغاء التثبيت" then
 if not msg.Admin then return "♦️*┇*هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n💥" end
-if not msg.Director and redis:get(max..'lock_pin'..msg.chat_id_) then
+if not msg.Director and redis:get(pikachu..'lock_pin'..msg.chat_id_) then
 return "لا يمكنك الغاء التثبيت الامر مقفول من قبل الاداره"
 else
 local GroupID = msg.chat_id_:gsub('-100','')
@@ -512,8 +512,8 @@ if not redis:get(max..'ExCmdLink'..msg.chat_id_) then
 local LinkGp = ExportLink(msg.chat_id_)
 if LinkGp then
 LinkGp = LinkGp.result
-redis:set(max..'linkGroup'..msg.chat_id_,LinkGp)
-redis:setex(max..'ExCmdLink'..msg.chat_id_,120,true)
+redis:set(pikachu..'linkGroup'..msg.chat_id_,LinkGp)
+redis:setex(pikachu..'ExCmdLink'..msg.chat_id_,120,true)
 return sendMsg(msg.chat_id_,msg.id_,"🙋🏻‍♂*┇*تم انشاء رابط جديد \n🔖┇["..LinkGp.."]\n🔖┇لعرض الرابط ارسل { الرابط } \n")
 else
 return sendMsg(msg.chat_id_,msg.id_,"♦️┇لا يمكنني انشاء رابط للمجموعه .\n🎟┇لانني لست مشرف في المجموعه \n 💥")
@@ -525,11 +525,11 @@ return false
 end 
 
 if MsgText[1] == "الرابط" then
-if not redis:get(max..'linkGroup'..msg.chat_id_) then 
+if not redis:get(pikachu..'linkGroup'..msg.chat_id_) then 
 return "📡*┇* اوه 🙀 لا يوجد رابط ☹️\n🔖*┇*لانشاء رابط ارسل { انشاء رابط } \n📡" 
 end
-local GroupName = redis:get(max..'group:name'..msg.chat_id_)
-local GroupLink = redis:get(max..'linkGroup'..msg.chat_id_)
+local GroupName = redis:get(pikachu..'group:name'..msg.chat_id_)
+local GroupLink = redis:get(pikachu..'linkGroup'..msg.chat_id_)
 return "🔖┇رابـط الـمـجـمـوعه 💯\n🌿┇"..Flter_Markdown(GroupName).." :\n\n["..GroupLink.."]\n"
 end
   
@@ -553,12 +553,12 @@ end
 
 if MsgText[1] == "ضع القوانين" then
 if not msg.Admin then return "♦️*┇*هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n💥" end
-redis:setex(max..'rulse:witting'..msg.sender_user_id_,300,true)
+redis:setex(pikachu..'rulse:witting'..msg.sender_user_id_,300,true)
 return '📭┇حسننا عزيزي  ✋🏿\n🗯┇الان ارسل القوانين  للمجموعه 🍃'
 end
 
 if MsgText[1] == "القوانين" then
-if not redis:get(max..'rulse:msg'..msg.chat_id_) then 
+if not redis:get(pikachu..'rulse:msg'..msg.chat_id_) then 
 return "🙋🏻‍♂*┇*مرحبأ عزيري القوانين كلاتي 👇🏻\n♦️┇ممنوع نشر الروابط \n⚠️┇ممنوع التكلم او نشر صور اباحيه \n⚔┇ممنوع  اعاده توجيه\n💭┇ممنوع التكلم بلطائفه \n♥️┇الرجاء احترام المدراء والادمنيه\n"
 else 
 return "*🔖┇القوانين :*\n"..redis:get(max..'rulse:msg'..msg.chat_id_) 
@@ -572,7 +572,7 @@ local NumLoop = tonumber(MsgText[2])
 if NumLoop < 1 or NumLoop > 50 then 
 return "📡*┇* حدود التكرار ,  يجب ان تكون ما بين  *[2-50]*" 
 end
-redis:set(max..'flood'..msg.chat_id_,MsgText[2]) 
+redis:set(pikachu..'flood'..msg.chat_id_,MsgText[2]) 
 return "📡*┇* تم وضع التكرار » { *"..MsgText[2].."* }"
 end
 
@@ -617,7 +617,7 @@ end
 if MsgText[2] == "الادمنيه" then 
 if not msg.Director then return "♦️*┇*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
 
-local Admins = redis:scard(max..'admins:'..msg.chat_id_)
+local Admins = redis:scard(pikachu..'admins:'..msg.chat_id_)
 if Admins ==0 then  
 return "📡*┇* اوه ☢ هنالك خطأ 🚸\n♦️┇عذرا لا يوجد ادمنيه ليتم مسحهم ✓" 
 end
@@ -628,11 +628,11 @@ end
 
 if MsgText[2] == "قائمه المنع" then
 if not msg.Director then return "♦️*┇*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
-local Mn3Word = redis:scard(max..':Filter_Word:'..msg.chat_id_)
+local Mn3Word = redis:scard(pikachu..':Filter_Word:'..msg.chat_id_)
 if Mn3Word == 0 then 
 return "📡*┇* عذرا لا توجد كلمات ممنوعه ليتم حذفها ✓" 
 end
-redis:del(max..':Filter_Word:'..msg.chat_id_)
+redis:del(pikachu..':Filter_Word:'..msg.chat_id_)
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."   \n🔖┇تم مسح {*"..Mn3Word.."*} كلمات من المنع ✓"
 end
 
@@ -642,7 +642,7 @@ if not msg.Director then return "♦️*┇*هذا الامر يخص {المطو
 if not redis:get(max..'rulse:msg'..msg.chat_id_) then 
 return "♦️┇عذرا لا يوجد قوانين ليتم مسحه \n!" 
 end
-redis:del(max..'rulse:msg'..msg.chat_id_)
+redis:del(pikachu..'rulse:msg'..msg.chat_id_)
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."   \n♦️┇تم حذف القوانين بنجاح ✓"
 end
 
@@ -652,14 +652,14 @@ if not msg.Director then return "♦️*┇*هذا الامر يخص {المطو
 if not redis:get(max..'welcome:msg'..msg.chat_id_) then 
 return "📡*┇* اوه ☢ هنالك خطأ 🚸\n♦️┇عذرا لا يوجد ترحيب ليتم مسحه ✓" 
 end
-redis:del(max..'welcome:msg'..msg.chat_id_)
+redis:del(pikachu..'welcome:msg'..msg.chat_id_)
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."   \n♦️┇تم حذف الترحيب بنجاح \n✓"
 end
 
 
 if MsgText[2] == "المنشئيين" then
 if not msg.SudoUser then return "♦️*┇*هذا الامر يخص {المطور} فقط  \n💥" end
-local NumMnsha = redis:scard(max..':MONSHA_BOT:'..msg.chat_id_)
+local NumMnsha = redis:scard(pikachu..':MONSHA_BOT:'..msg.chat_id_)
 if NumMnsha ==0 then 
 return "♦️┇عذرا لا يوجد منشئيين ليتم مسحهم \n!" 
 end
@@ -674,7 +674,7 @@ local NumMDER = redis:scard(max..'owners:'..msg.chat_id_)
 if NumMDER ==0 then 
 return "♦️┇عذرا لا يوجد مدراء ليتم مسحهم \n!" 
 end
-redis:del(max..'owners:'..msg.chat_id_)
+redis:del(pikachu..'owners:'..msg.chat_id_)
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."   \n♦️┇ تم مسح {* "..NumMDER.." *} من المدراء  \n✓"
 end
 
@@ -687,36 +687,36 @@ message = '📋*┇* قائمه الاعضاء المحظورين :\n'
 for k,v in pairs(list) do
 StatusLeft(msg.chat_id_,v)
 end 
-redis:del(max..'banned:'..msg.chat_id_)
+redis:del(pikachu..'banned:'..msg.chat_id_)
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."   \n♦️┇ تم مسح {* "..#list.." *} من المحظورين  \n✓"
 end
 
 if MsgText[2] == 'المكتومين' then
 if not msg.Director then return "♦️*┇*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
-local MKTOMEN = redis:scard(max..'is_silent_users:'..msg.chat_id_)
+local MKTOMEN = redis:scard(pikachu..'is_silent_users:'..msg.chat_id_)
 if MKTOMEN ==0 then 
 return "📡*┇* لا يوجد مستخدمين مكتومين في المجموعه " 
 end
-redis:del(max..'is_silent_users:'..msg.chat_id_)
+redis:del(pikachu..'is_silent_users:'..msg.chat_id_)
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."   \n♦️┇ تم مسح {* "..MKTOMEN.." *} من المكتومين  \n✓"
 end
 
 if MsgText[2] == 'المميزين' then
 if not msg.Director then return "♦️*┇*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
-local MMEZEN = redis:scard(max..'whitelist:'..msg.chat_id_)
+local MMEZEN = redis:scard(pikachu..'whitelist:'..msg.chat_id_)
 if MMEZEN ==0 then 
 return "*⚙️*┇لا يوجد مستخدمين مميزين في المجموعه " 
 end
-redis:del(max..'whitelist:'..msg.chat_id_)
+redis:del(pikachu..'whitelist:'..msg.chat_id_)
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."   \n♦️┇ تم مسح {* "..MMEZEN.." *} من المميزين  \n✓"
 end
 
 if MsgText[2] == 'الرابط' then
 if not msg.Director then return "♦️*┇*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
-if not redis:get(max..'linkGroup'..msg.chat_id_) then 
+if not redis:get(pikachu..'linkGroup'..msg.chat_id_) then 
 return "*⚙️*┇لا يوجد رابط مضاف اصلا " 
 end
-redis:del(max..'linkGroup'..msg.chat_id_)
+redis:del(pikachu..'linkGroup'..msg.chat_id_)
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."   \n♦️┇تم مسح رابط المجموعه \n✓"
 end
 
@@ -727,7 +727,7 @@ end
 
 if MsgText[1] == "ضع اسم" then
 if not msg.Creator then return "♦️*┇*هذا الامر يخص {المطور,المنشئ} فقط  \n💥" end
-redis:setex(max..'name:witting'..msg.sender_user_id_,300,true)
+redis:setex(pikachu..'name:witting'..msg.sender_user_id_,300,true)
 return "📭┇حسننا عزيزي  ✋🏿\n🗯┇الان ارسل الاسم  للمجموعه \n🛠"
 end
 
@@ -762,7 +762,7 @@ end
 end ,nil)
 return false
 else 
-redis:setex(max..'photo:group'..msg.chat_id_..msg.sender_user_id_,300,true)
+redis:setex(pikachu..'photo:group'..msg.chat_id_..msg.sender_user_id_,300,true)
 return '📭┇حسننا عزيزي 🍁\n🌄 ┇الان قم بارسال الصوره\n🛠' 
 end 
 end
@@ -770,7 +770,7 @@ end
 
 if MsgText[1] == "ضع وصف" then 
 if not msg.Creator then return "♦️*┇*هذا الامر يخص {المطور,المنشئ} فقط  \n💥" end
-redis:setex(max..'about:witting'..msg.sender_user_id_,300,true) 
+redis:setex(pikachu..'about:witting'..msg.sender_user_id_,300,true) 
 return "📭┇حسننا عزيزي  ✋🏿\n🗯┇الان ارسل الوصف  للمجموعه\n🛠" 
 end
 
@@ -891,18 +891,18 @@ end
 if MsgText[1] == "ايدي" or MsgText[1]:lower() == "id" then
 
 if not MsgText[2] and not msg.reply_id then
-if redis:get(max..'lock_id'..msg.chat_id_) then
+if redis:get(pikachu..'lock_id'..msg.chat_id_) then
 local msgs = redis:get(max..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 1
 GetUserID(msg.sender_user_id_,function(arg,data)
 if data.username_ then UserNameID = "🎫┇معرفـك ❪ @"..data.username_.." ❫\n" else UserNameID = "" end
-local points = redis:get(max..':User_Points:'..msg.chat_id_..msg.sender_user_id_)
+local points = redis:get(pikachu..':User_Points:'..msg.chat_id_..msg.sender_user_id_)
 if points and points ~= "0" then
 nko = points
 else
 nko = '0'
 end
-local rfih = (redis:get(max..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local NumGha = (redis:get(max..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local rfih = (redis:get(pikachu..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local NumGha = (redis:get(pikachu..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
 local Namei = FlterName(data.first_name_..' '..(data.last_name_ or ""),20)
 GetPhotoUser(msg.sender_user_id_,function(arg, data)
 if data.photos_[0] then 
@@ -966,15 +966,15 @@ end
 
 if MsgText[1]== 'رسائلي' or MsgText[1] == 'رسايلي' or MsgText[1] == 'احصائياتي'  then
 GetUserID(msg.sender_user_id_,function(arg,data)
-local msgs = (redis:get(max..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 0)
-local NumGha = (redis:get(max..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local photo = (redis:get(max..':photo:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local sticker = (redis:get(max..':sticker:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local voice = (redis:get(max..':voice:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local audio = (redis:get(max..':audio:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local animation = (redis:get(max..':animation:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local edited = (redis:get(max..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local video = (redis:get(max..':video:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local msgs = (redis:get(pikachu..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 0)
+local NumGha = (redis:get(pikachu..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local photo = (redis:get(pikachu..':photo:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local sticker = (redis:get(pikachu..':sticker:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local voice = (redis:get(pikachu..':voice:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local audio = (redis:get(pikachu..':audio:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local animation = (redis:get(pikachu..':animation:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local edited = (redis:get(pikachu..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local video = (redis:get(pikachu..':video:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
 
 local Get_info =  " \n✔️┇❪ الاحـصـائـيـات الـرسـائـلك ❫\n \n"
 .."💬┇الـرسـائـل ❪ `"..msgs.."` ❫\n"
@@ -1020,23 +1020,23 @@ return false
 end
 
 if MsgText[1] == 'مسح' and MsgText[2] == 'مجوهراتي'  then
-local points = redis:get(max..':User_Points:'..msg.chat_id_..msg.sender_user_id_) or 0
+local points = redis:get(pikachu..':User_Points:'..msg.chat_id_..msg.sender_user_id_) or 0
 if nko == 0 then  return "⚠️*┇*عذرا ليس لديك مجوهرات لكي يتم مسحها" end
-redis:del(max..':User_Points:'..msg.chat_id_..msg.sender_user_id_)
+redis:del(pikachu..':User_Points:'..msg.chat_id_..msg.sender_user_id_)
 return "♦️*┇*تم مسح {* "..points.." *} من مجوهراتك\n✓"
 end
 
 if MsgText[1] == 'معلوماتي' or MsgText[1] == 'موقعي' then
 GetUserID(msg.sender_user_id_,function(arg,data)
-local msgs = (redis:get(max..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 0)
-local NumGha = (redis:get(max..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local photo = (redis:get(max..':photo:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local sticker = (redis:get(max..':sticker:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local voice = (redis:get(max..':voice:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local audio = (redis:get(max..':audio:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local animation = (redis:get(max..':animation:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local edited = (redis:get(max..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local video = (redis:get(max..':video:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local msgs = (redis:get(pikachu..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 0)
+local NumGha = (redis:get(pikachu..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local photo = (redis:get(pikachu..':photo:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local sticker = (redis:get(pikachu..':sticker:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local voice = (redis:get(pikachu..':voice:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local audio = (redis:get(pikachu..':audio:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local animation = (redis:get(pikachu..':animation:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local edited = (redis:get(pikachu..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local video = (redis:get(pikachu..':video:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
 
 local Get_info ="👨🏽‍🔧┇اهـلا بـك عزيزي في معلوماتك 🥀 \n"
 .."ـ.——————————\n"
@@ -1064,15 +1064,15 @@ end
 
 if MsgText[1] == "مسح معلوماتي" then
 GetUserID(msg.sender_user_id_,function(arg,data)
-local msgs = (redis:del(max..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 0)
-local NumGha = (redis:del(max..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local photo = (redis:del(max..':photo:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local sticker = (redis:del(max..':sticker:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local voice = (redis:del(max..':voice:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local audio = (redis:del(max..':audio:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local animation = (redis:del(max..':animation:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local edited = (redis:del(max..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
-local video = (redis:del(max..':video:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local msgs = (redis:del(pikachu..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 0)
+local NumGha = (redis:del(pikachu..':adduser:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local photo = (redis:del(pikachu..':photo:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local sticker = (redis:del(pikachu..':sticker:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local voice = (redis:del(pikachu..':voice:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local audio = (redis:del(pikachu..':audio:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local animation = (redis:del(pikachu..':animation:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local edited = (redis:del(pikachu..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
+local video = (redis:del(pikachu..':video:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
 
 local Get_info ="🙋🏻‍♂┇اهلن عزيزي تم حذف جميع معلوماتك "
 return sendMsg(msg.chat_id_,msg.id_,Get_info)    
@@ -1111,7 +1111,7 @@ end
 
 if MsgText[1] == "الترحيب" then
 if not msg.Admin then return "♦️*┇*هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n💥" end
-if redis:get(max..'welcome:msg'..msg.chat_id_)  then
+if redis:get(pikachu..'welcome:msg'..msg.chat_id_)  then
 return Flter_Markdown(redis:get(max..'welcome:msg'..msg.chat_id_))
 else 
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."  \n🌿┇نورت المجموعه \n💂🏼‍♀️" 
@@ -1355,7 +1355,7 @@ end
 if MsgText[1] == "صوره الترحيب" then
 local Photo_Weloame = redis:get(max..':WELCOME_BOT')
 if Photo_Weloame then
-sendPhoto(msg.chat_id_,msg.id_,Photo_Weloame,[[⚜┊اهلا انآ بوت آسـمـي ]]..redis:get(max..':NameBot:')..[[ ✓
+sendPhoto(msg.chat_id_,msg.id_,Photo_Weloame,[[⚜┊اهلا انآ بوت آسـمـي ]]..redis:get(pikachu..':NameBot:')..[[ ✓
 👨🏻‍✈️┊آختصـآصـي حمـآيهہ‌‏ آلمـجمـوعآت
 📛┊مـن آلسـبآم وآلتوجيهہ‌‏ وآلتگرآر وآلخ...
 
@@ -1369,7 +1369,7 @@ end
 end
 
 if MsgText[1] == "ضع كليشه المطور" then 
-redis:setex(max..'text_sudo:witting'..msg.sender_user_id_,1200,true) 
+redis:setex(pikachu..'text_sudo:witting'..msg.sender_user_id_,1200,true) 
 return '📭┇حسننا عزيزي 🍁\n💬┇الان قم بارسال الكليشه \n🛠' 
 end
 
@@ -1417,10 +1417,10 @@ end
 
 if MsgText[1] == "اذاعه عام بالتوجيه" or MsgText[1] == "اذاعه عام بالتوجيه 📣" then
 if not msg.SudoUser then return"♦️*┇*هذا الامر يخص {المطور} فقط  \n💥" end
-if not msg.SudoBase and not redis:get(max..'lock_brod') then 
+if not msg.SudoBase and not redis:get(pikachu..'lock_brod') then 
 return "📡*┇* الاذاعه مقفوله من قبل المطور الاساسي  🚶" 
 end
-redis:setex(max..'fwd:'..msg.sender_user_id_,300, true) 
+redis:setex(pikachu..'fwd:'..msg.sender_user_id_,300, true) 
 return "📭┇حسننا الان ارسل التوجيه للاذاعه \n🔛" 
 end
 
@@ -1429,22 +1429,22 @@ if not msg.SudoUser then return"♦️*┇*هذا الامر يخص {المطو�
 if not msg.SudoBase and not redis:get(max..'lock_brod') then 
 return "📡*┇* الاذاعه مقفوله من قبل المطور الاساسي  🚶" 
 end
-redis:setex(max..'fwd:all'..msg.sender_user_id_,300, true) 
+redis:setex(pikachu..'fwd:all'..msg.sender_user_id_,300, true) 
 return "📭┇حسننا الان ارسل الكليشه للاذاعه عام \n🔛" 
 end
 
 if MsgText[1] == "اذاعه خاص" or MsgText[1] == "اذاعه خاص 🗣" then		
 if not msg.SudoUser then return "♦️*┇*هذا الامر يخص {المطور} فقط  \n💥" end
-if not msg.SudoBase and not redis:get(max..'lock_brod') then 
+if not msg.SudoBase and not redis:get(pikachu..'lock_brod') then 
 return "📡*┇* الاذاعه مقفوله من قبل المطور الاساسي  🚶" 
 end
-redis:setex(max..'fwd:pv'..msg.sender_user_id_,300, true) 
+redis:setex(pikachu..'fwd:pv'..msg.sender_user_id_,300, true) 
 return "📭┇حسننا الان ارسل الكليشه للاذاعه خاص \n🔛"
 end
 
 if MsgText[1] == "اذاعه" or MsgText[1] == "اذاعه 🗣" then		
 if not msg.SudoUser then return"♦️*┇*هذا الامر يخص {المطور} فقط  \n💥" end
-if not msg.SudoBase and not redis:get(max..'lock_brod') then 
+if not msg.SudoBase and not redis:get(pikachu..'lock_brod') then 
 return "📡*┇* الاذاعه مقفوله من قبل المطور الاساسي  🚶" 
 end
 redis:setex(max..'fwd:groups'..msg.sender_user_id_,300, true) 
@@ -1513,21 +1513,21 @@ if MsgText[1] == "رتبتي" then return '🎫*┇* رتبتك ⇜ ❪ '..msg.T
 if MsgText[1] == "الغاء الامر ✖️" or MsgText[1] == "الغاء" then
 if not msg.Admin then return "♦️*┇*هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n💥" end
 redis:del(max..'welcom:witting'..msg.sender_user_id_,
-max..'rulse:witting'..msg.sender_user_id_,
-max..'rulse:witting'..msg.sender_user_id_,
-max..'name:witting'..msg.sender_user_id_,
-max..'about:witting'..msg.sender_user_id_,
-max..'fwd:all'..msg.sender_user_id_,
-max..'fwd:pv'..msg.sender_user_id_,
-max..'fwd:groups'..msg.sender_user_id_,
-max..'namebot:witting'..msg.sender_user_id_,
-max..'addrd_all:'..msg.sender_user_id_,
-max..'delrd:'..msg.sender_user_id_,
-max..'addrd:'..msg.sender_user_id_,
-max..'delrdall:'..msg.sender_user_id_,
-max..'text_sudo:witting'..msg.sender_user_id_,
-max..'addrd:'..msg.chat_id_..msg.sender_user_id_,
-max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
+pikachu..'rulse:witting'..msg.sender_user_id_,
+pikachu..'rulse:witting'..msg.sender_user_id_,
+pikachu..'name:witting'..msg.sender_user_id_,
+pikachu..'about:witting'..msg.sender_user_id_,
+pikachu..'fwd:all'..msg.sender_user_id_,
+pikachu..'fwd:pv'..msg.sender_user_id_,
+pikachu..'fwd:groups'..msg.sender_user_id_,
+pikachu..'namebot:witting'..msg.sender_user_id_,
+pikachu..'addrd_all:'..msg.sender_user_id_,
+pikachu..'delrd:'..msg.sender_user_id_,
+pikachu..'addrd:'..msg.sender_user_id_,
+pikachu..'delrdall:'..msg.sender_user_id_,
+pikachu..'text_sudo:witting'..msg.sender_user_id_,
+pikachu..'addrd:'..msg.chat_id_..msg.sender_user_id_,
+pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 return '📬*┇* تم آلغآء آلآمـر بنجآح \n🌿'
 end  
 
@@ -1538,14 +1538,14 @@ end
 
 if (MsgText[1] == 'تحديث السورس' or MsgText[1] == 'تحديث السورس ™') then
 if not msg.SudoBase then return "♦️*┇*هذا الامر يخص {المطور الاساسي} فقط  \n💥" end
-local GetVerison = https.request('https://github.com/MAXTELE/max.github.io/GetVersion.txt') or 0
+local GetVerison = https.request('https://github.com/hassn1998/pikachu.github.io/GetVersion.txt') or 0
 if GetVerison > version then
 UpdateSourceStart = true
 sendMsg(msg.chat_id_,msg.id_,'🔛*┊* يوجد تحديث جديد الان \n📡*┊* جاري تنزيل وتثبيت التحديث  ...')
 redis:set(max..":VERSION",GetVerison)
 return false
 else
-return "🔖┊سـورس مـاكـس\n👨🏾‍🔧*┊* لديـك احدث اصدار \n📦"
+return "🔖┊سـورس بيكاجو\n👨🏾‍🔧*┊* لديـك احدث اصدار \n📦"
 end
 return false
 end
@@ -1580,7 +1580,7 @@ else
 sendMsg(msg.chat_id_,msg.id_,"📛*┇* عذرا النسخه الاحتياطيه هذا ليست للبوت » ["..Bot_User.."]  \n💥")
 end
 else 
-sendMsg(msg.chat_id_,msg.id_,'📛*┇* عذرا اسم الملف غير مدعوم للنظام او لا يتوافق مع سورس الزعيم يرجى جلب الملف الاصلي الذي قمت بسحبه وبدون تعديل ع الاسم\n💥')
+sendMsg(msg.chat_id_,msg.id_,'📛*┇* عذرا اسم الملف غير مدعوم للنظام او لا يتوافق مع سورس بيكاجو يرجى جلب الملف الاصلي الذي قمت بسحبه وبدون تعديل ع الاسم\n💥')
 end  
 else
 sendMsg(msg.chat_id_,msg.id_,'📛*┇* عذرا الملف ليس بصيغه Json !?\n💥')
@@ -1603,8 +1603,8 @@ end
 if (MsgText[1]== "ايدي" or MsgText[1]=="ايديي🆔") and msg.type == "pv" then return  "\n👨🏻‍💻┊اهلن عزيزي المطور ايديك هوه ⏬\n\n🧟‍♂┊"..msg.sender_user_id_.."\n"  end
 
 if MsgText[1]== "قناة السورس 📡" and msg.type == "pv" then
-local inline = {{{text="⚜┇قنآهہ‏‏ آلسـورس ضـغـط هـنـآ ",url="t.me/hlh_313"}}}
-send_key(msg.sender_user_id_,'  [⚜┇قناة سورس : مـاكـس](t.me/hlh_313)',nil,inline,msg.id_)
+local inline = {{{text="⚜┇قنآهہ‏‏ آلسـورس ضـغـط هـنـآ ",url="t.me/Ha_ssin2"}}}
+send_key(msg.sender_user_id_,'  [⚜┇قناة سورس : بيكاجو](t.me/Ha_ssin2)',nil,inline,msg.id_)
 return false
 end
 
@@ -1615,20 +1615,20 @@ end
 ---------------[End Function data] -----------------------
 if MsgText[1]=="اضف رد عام" or MsgText[1]=="اضف رد عام ➕" then
 if not msg.SudoBase then return"♦️*┇*هذا الامر يخص {المطور الاساسي} فقط  \n💥" end
-redis:setex(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_,300,true)
-redis:del(max..'allreplay:'..msg.chat_id_..msg.sender_user_id_)
+redis:setex(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_,300,true)
+redis:del(pikachu..'allreplay:'..msg.chat_id_..msg.sender_user_id_)
 return "📭┇حسننا الان ارسل كلمة الرد العام 🍃\n"
 end
 
 if MsgText[1]== 'مسح' and MsgText[2]== 'الردود' then
 if not msg.Director then return "♦️*┇*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
-local names 	= redis:exists(max..'replay:'..msg.chat_id_)
-local photo 	= redis:exists(max..'replay_photo:group:'..msg.chat_id_)
-local voice 	= redis:exists(max..'replay_voice:group:'..msg.chat_id_)
-local imation   = redis:exists(max..'replay_animation:group:'..msg.chat_id_)
-local audio	 	= redis:exists(max..'replay_audio:group:'..msg.chat_id_)
-local sticker 	= redis:exists(max..'replay_sticker:group:'..msg.chat_id_)
-local video 	= redis:exists(max..'replay_video:group:'..msg.chat_id_)
+local names 	= redis:exists(pikachu..'replay:'..msg.chat_id_)
+local photo 	= redis:exists(pikachu..'replay_photo:group:'..msg.chat_id_)
+local voice 	= redis:exists(pikachu..'replay_voice:group:'..msg.chat_id_)
+local imation   = redis:exists(pikachu..'replay_animation:group:'..msg.chat_id_)
+local audio	 	= redis:exists(pikachu..'replay_audio:group:'..msg.chat_id_)
+local sticker 	= redis:exists(pikachu..'replay_sticker:group:'..msg.chat_id_)
+local video 	= redis:exists(pikachu..'replay_video:group:'..msg.chat_id_)
 if names or photo or voice or imation or audio or sticker or video then
 redis:del(max..'replay:'..msg.chat_id_,max..'replay_photo:group:'..msg.chat_id_,max..'replay_voice:group:'..msg.chat_id_,
 max..'replay_animation:group:'..msg.chat_id_,max..'replay_audio:group:'..msg.chat_id_,max..'replay_sticker:group:'..msg.chat_id_,max..'replay_video:group:'..msg.chat_id_)
@@ -1648,7 +1648,7 @@ local audio 	= redis:exists(max..'replay_audio:group:')
 local sticker 	= redis:exists(max..'replay_sticker:group:')
 local video 	= redis:exists(max..'replay_video:group:')
 if names or photo or voice or imation or audio or sticker or video then
-redis:del(max..'replay:all',max..'replay_photo:group:',max..'replay_voice:group:',max..'replay_animation:group:',max..'replay_audio:group:',max..'replay_sticker:group:',max..'replay_video:group:')
+redis:del(pikachu..'replay:all',max..'replay_photo:group:',pikachu..'replay_voice:group:',pikachu..'replay_animation:group:',pikachu..'replay_audio:group:',pikachu..'replay_sticker:group:',pikachu..'replay_video:group:')
 return "✓ تم مسح كل الردود العامه🚀"
 else
 return "لا يوجد ردود عامه ليتم مسحها ! 🚀"
@@ -1657,7 +1657,7 @@ end
 
 if MsgText[1]== 'مسح' and MsgText[2]== 'رد عام' then
 if not msg.SudoBase then return"♦️*┇*هذا الامر يخص {المطور الاساسي} فقط  \n💥" end
-redis:set(max..'delrdall:'..msg.sender_user_id_,true) 
+redis:set(pikachu..'delrdall:'..msg.sender_user_id_,true) 
 return "📭┊حسننا عزيزي  ✋🏿\n🗯┊الان ارسل الرد لمسحها من  المجموعات 🍃"
 end
 
@@ -1669,13 +1669,13 @@ end
 
 if MsgText[1]== 'الردود' then
 if not msg.Director then return "♦️*┇*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
-local names  	= redis:hkeys(max..'replay:'..msg.chat_id_)
-local photo 	= redis:hkeys(max..'replay_photo:group:'..msg.chat_id_)
-local voice  	= redis:hkeys(max..'replay_voice:group:'..msg.chat_id_)
-local imation 	= redis:hkeys(max..'replay_animation:group:'..msg.chat_id_)
-local audio 	= redis:hkeys(max..'replay_audio:group:'..msg.chat_id_)
-local sticker 	= redis:hkeys(max..'replay_sticker:group:'..msg.chat_id_)
-local video 	= redis:hkeys(max..'replay_video:group:'..msg.chat_id_)
+local names  	= redis:hkeys(pikachu..'replay:'..msg.chat_id_)
+local photo 	= redis:hkeys(pikachu..'replay_photo:group:'..msg.chat_id_)
+local voice  	= redis:hkeys(pikachu..'replay_voice:group:'..msg.chat_id_)
+local imation 	= redis:hkeys(pikachu..'replay_animation:group:'..msg.chat_id_)
+local audio 	= redis:hkeys(pikachu..'replay_audio:group:'..msg.chat_id_)
+local sticker 	= redis:hkeys(pikachu..'replay_sticker:group:'..msg.chat_id_)
+local video 	= redis:hkeys(pikachu..'replay_video:group:'..msg.chat_id_)
 if #names==0 and #photo==0 and #voice==0 and #imation==0 and #audio==0 and #sticker==0 and #video==0 then 
 return '🚸*┊*لا يوجد ردود مضافه حاليا \n💥' 
 end
@@ -1718,14 +1718,14 @@ end
 
 if MsgText[1]=="اضف رد" and msg.GroupActive then
 if not msg.Director then return "♦️*┇*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
-redis:setex(max..'addrd:'..msg.chat_id_..msg.sender_user_id_,300,true) 
-redis:del(max..'replay1'..msg.chat_id_..msg.sender_user_id_)
+redis:setex(pikachu..'addrd:'..msg.chat_id_..msg.sender_user_id_,300,true) 
+redis:del(pikachu..'replay1'..msg.chat_id_..msg.sender_user_id_)
 return "📭┊حسننا , الان ارسل كلمه الرد \n-"
 end
 
 if MsgText[1] == "ضع اسم للبوت" or MsgText[1]== 'ضع اسم للبوت ©' then
 if not msg.SudoBase then return"♦️*┇*هذا الامر يخص {المطور الاساسي} فقط  \n💥" end
-redis:setex(max..'namebot:witting'..msg.sender_user_id_,300,true)
+redis:setex(pikachu..'namebot:witting'..msg.sender_user_id_,300,true)
 return"📭┊حسننا عزيزي  ✋🏿\n🗯┊الان ارسل الاسم  للبوت 🍃"
 end
 
@@ -2022,14 +2022,14 @@ end
 
 if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
 return [[
-📮┇اهلا بك في سورس مـاكـس🍃
+📮┇اهلا بك في سورس بيكاجو🍃
 ⚜┇اقوه السورسات في التلي
 ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 🗃┇لتنصيب السورس ↓↑
 💭┇افتح ترمنال جديد 
 ⚜┇انسخ رابط كيثاب السورس  ↡
 
-`git clone https://github.com/MAXTELE/MAX.git ;cd MAX;chmod +x ins;./ins`
+`git clone https://github.com/hassn1998/pikachu.git ;cd MAX;chmod +x ins;./ins`
 ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 راح يطلب منك معلومات ک تالي ↓
 
@@ -2044,10 +2044,10 @@ return [[
 ✨┇ومبروك نصبت سورس ماكس تيجي الجديد ع توكن 
 ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 💭┇كود رن السورس 
-`./MAX/run`
+`./pikachu/run`
 ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
-📡┇[قناة السورس](t.me/hlh_313) [@hlh_313]
-👨🏻‍✈️┇[مـطـور الـسـورس](t.me/hlh313)
+📡┇[قناة السورس](t.me/Ha_ssin2) [@Ha_ssin2]
+👨🏻‍✈️┇[مـطـور الـسـورس](t.me/Ha_ssin)
 
 ]]
 end
@@ -2062,13 +2062,13 @@ return "➖\n📆| الـتـاريـخ : "..os.date("%Y/%m/%d")
 end
 
 if MsgText[1]== "سحكاتي" then
-return '🚸*┇*عدد سحہكآتگ ⇜ ❪ '..(redis:get(max..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)..' ❫ \n🐾'
+return '🚸*┇*عدد سحہكآتگ ⇜ ❪ '..(redis:get(pikachu..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)..' ❫ \n🐾'
 end
 
 if MsgText[1] == 'مسح' and MsgText[2] == 'سحكاتي'  then
 local rfih = (redis:get(max..':edited:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
 if rfih == 0 then  return "⚠️*┇*عذرا لا يوجد سحكات لك في البوت  ✖️" end
-redis:del(max..':edited:'..msg.chat_id_..':'..msg.sender_user_id_)
+redis:del(pikachu..':edited:'..msg.chat_id_..':'..msg.sender_user_id_)
 return "♦️*┇*تم مسح {* "..rfih.." *} من سحكاتك ☔️\n✓"
 end
 
@@ -2095,7 +2095,7 @@ end
 
 if MsgText[1] == "الاشتراك الاجباري" or MsgText[1] == "الاشتراك الاجباري ⚠️" then
 if not msg.SudoBase then return"♦️*┇*هذا الامر يخص {المطور الاساسي} فقط  \n💥" end
-local UserChaneel = redis:get(max..":UserNameChaneel")
+local UserChaneel = redis:get(pikachu..":UserNameChaneel")
 if UserChaneel then
 return "🔖┊اهلا عزيزي المطور \n🔖┊الاشتراك الاجباري للقناة : ["..UserChaneel.."]\n✓"
 else
@@ -2105,7 +2105,7 @@ end
 
 if MsgText[1] == "تغيير الاشتراك الاجباري" or MsgText[1] == "تغيير الاشتراك الاجباري 🧟‍♂" then
 if not msg.SudoBase then return"♦️*┇*هذا الامر يخص {المطور الاساسي} فقط  \n💥" end
-redis:setex(max..":ForceSub:"..msg.sender_user_id_,350,true)
+redis:setex(pikachu..":ForceSub:"..msg.sender_user_id_,350,true)
 return "📑┊مرحبا بـك في نظام الاشتراك الاجباري\n🔖┊الان ارسل معرف قـنـاتـك"
 end
 
@@ -2125,7 +2125,7 @@ if msg.type == "pv" then
 if not msg.SudoUser then
 local msg_pv = tonumber(redis:get(max..'user:'..msg.sender_user_id_..':msgs') or 0)
 if msg_pv > 5 then
-redis:setex(max..':mute_pv:'..msg.sender_user_id_,18000,true)   
+redis:setex(pikachu..':mute_pv:'..msg.sender_user_id_,18000,true)   
 return sendMsg(msg.chat_id_,0,'*📛┇* تم حظرك من البوت بسبب التكرار \n🛠') 
 end
 redis:setex(max..'user:'..msg.sender_user_id_..':msgs',2,msg_pv+1)
@@ -2238,70 +2238,70 @@ end
 end
 
 --====================== Reply Only Group ====================================
-if redis:get(max..'addrd:'..msg.chat_id_..msg.sender_user_id_) and redis:get(max..'replay1'..msg.chat_id_..msg.sender_user_id_) then
-local klma = redis:get(max..'replay1'..msg.chat_id_..msg.sender_user_id_)
+if redis:get(pikachu..'addrd:'..msg.chat_id_..msg.sender_user_id_) and redis:get(pikachu..'replay1'..msg.chat_id_..msg.sender_user_id_) then
+local klma = redis:get(pikachu..'replay1'..msg.chat_id_..msg.sender_user_id_)
 if msg.text then 
-redis:hset(max..'replay:'..msg.chat_id_,klma,Flter_Markdown(msg.text))
+redis:hset(pikachu..'replay:'..msg.chat_id_,klma,Flter_Markdown(msg.text))
 redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'(['..klma..'])\n  ✓ تم اضافت الرد 🚀 \n-')
 elseif msg.photo then 
-redis:hset(max..'replay_photo:group:'..msg.chat_id_,klma,photo_id)
-redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_photo:group:'..msg.chat_id_,klma,photo_id)
+redis:del(pikachu..'addrd:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه صوره للرد بنجاح ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوره الاتيه ')
 elseif msg.voice then
-redis:hset(max..'replay_voice:group:'..msg.chat_id_,klma,voice_id)
-redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_voice:group:'..msg.chat_id_,klma,voice_id)
+redis:del(pikachu..'addrd:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه بصمه صوت للرد بنجاح ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لسماع البصمه الاتيه ')
 elseif msg.animation then
-redis:hset(max..'replay_animation:group:'..msg.chat_id_,klma,animation_id)
-redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_animation:group:'..msg.chat_id_,klma,animation_id)
+redis:del(pikachu..'addrd:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه متحركه للرد بنجاح ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوره الاتيه ')
 elseif msg.video then
-redis:hset(max..'replay_video:group:'..msg.chat_id_,klma,video_id)
-redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_video:group:'..msg.chat_id_,klma,video_id)
+redis:del(pikachu..'addrd:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه فيديو للرد بنجاح ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الفيديو الاتي ')
 elseif msg.audio then
-redis:hset(max..'replay_audio:group:'..msg.chat_id_,klma,audio_id)
-redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_audio:group:'..msg.chat_id_,klma,audio_id)
+redis:del(pikachu..'addrd:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه للصوت للرد بنجاح ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوت الاتي ')
 elseif msg.sticker then
-redis:hset(max..'replay_sticker:group:'..msg.chat_id_,klma,sticker_id)
-redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_sticker:group:'..msg.chat_id_,klma,sticker_id)
+redis:del(pikachu..'addrd:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه ملصق للرد بنجاح ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الملصق الاتي ')
 end  
 
 end
 
 --====================== Reply All Groups =====================================
-if redis:get(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_) and redis:get(max..'allreplay:'..msg.chat_id_..msg.sender_user_id_) then
+if redis:get(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_) and redis:get(pikachu..'allreplay:'..msg.chat_id_..msg.sender_user_id_) then
 local klma = redis:get(max..'allreplay:'..msg.chat_id_..msg.sender_user_id_)
 if msg.text then
-redis:hset(max..'replay:all',klma,Flter_Markdown(msg.text))
-redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay:all',klma,Flter_Markdown(msg.text))
+redis:del(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'(['..klma..'])\n  ✓ تم اضافت الرد لكل المجموعات 🚀 ')
 elseif msg.photo then 
-redis:hset(max..'replay_photo:group:',klma,photo_id)
-redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_photo:group:',klma,photo_id)
+redis:del(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه صوره للرد العام ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوره الاتيه ')
 elseif msg.voice then
-redis:hset(max..'replay_voice:group:',klma,voice_id)
-redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_voice:group:',klma,voice_id)
+redis:del(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه بصمه صوت للرد العام ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لسماع البصمه الاتيه ')
 elseif msg.animation then
-redis:hset(max..'replay_animation:group:',klma,animation_id)
-redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_animation:group:',klma,animation_id)
+redis:del(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه متحركه للرد العام ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوره الاتيه ')
 elseif msg.video then
-redis:hset(max..'replay_video:group:',klma,video_id)
-redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_video:group:',klma,video_id)
+redis:del(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه فيديو للرد العام ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵لاضهار الفيديو الاتي ')
 elseif msg.audio then
-redis:hset(max..'replay_audio:group:',klma,audio_id)
-redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_audio:group:',klma,audio_id)
+redis:del(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه للصوت للرد العام ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوت الاتي ')
 elseif msg.sticker then
-redis:hset(max..'replay_sticker:group:',klma,sticker_id)
-redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
+redis:hset(pikachu..'replay_sticker:group:',klma,sticker_id)
+redis:del(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 return sendMsg(msg.chat_id_,msg.id_,'🗂┊تم اضافه ملصق للرد العام ✓\n🗂┇يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الملصق الاتي ')
 end  
 
@@ -2310,9 +2310,9 @@ end
 if msg.text then
 --====================== Requst UserName Of Channel For ForceSub ==============
 
-if redis:get(max..":ForceSub:"..msg.sender_user_id_) then
+if redis:get(pikachu..":ForceSub:"..msg.sender_user_id_) then
 if msg.text:match("^@[%a%d_]+$") then
-redis:del(max..":ForceSub:"..msg.sender_user_id_)
+redis:del(pikachu..":ForceSub:"..msg.sender_user_id_)
 local url , res = https.request(ApiToken..'/getchatmember?chat_id='..msg.text..'&user_id='..msg.sender_user_id_)
 if res == 400 then
 local Req = JSON.decode(url)
@@ -2324,7 +2324,7 @@ sendMsg(msg.chat_id_,msg.id_,"📑┊عذرا , لقد نسيت شيئا \n🔖�
 return false
 end
 else
-redis:set(max..":UserNameChaneel",msg.text)
+redis:set(pikachu..":UserNameChaneel",msg.text)
 sendMsg(msg.chat_id_,msg.id_,"🔖┊جـيـد , الان لقد تم تفعيل الاشتراك الاجباري\n📮┊على قناتك ⇜ ["..msg.text.."]")
 return false
 end
@@ -2334,72 +2334,72 @@ return false
 end
 end
 
-if redis:get(max..'namebot:witting'..msg.sender_user_id_) then --- استقبال اسم البوت 
-redis:del(max..'namebot:witting'..msg.sender_user_id_)
-redis:set(max..':NameBot:',msg.text)
+if redis:get(pikachu..'namebot:witting'..msg.sender_user_id_) then --- استقبال اسم البوت 
+redis:del(pikachu..'namebot:witting'..msg.sender_user_id_)
+redis:set(pikachu..':NameBot:',msg.text)
 Start_Bot() 
 sendMsg(msg.chat_id_,msg.id_,"📭┊تم تغير اسم البوت  ✋🏿\n🗯┊الان اسمه "..Flter_Markdown(msg.text).." \n✓")
 return false
 end
 
-if redis:get(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_) then -- استقبال الرد لكل المجموعات
-if not redis:get(max..'allreplay:'..msg.chat_id_..msg.sender_user_id_) then -- استقبال كلمه الرد لكل المجموعات
-redis:hdel(max..'replay_photo:group:',msg.text)
-redis:hdel(max..'replay_voice:group:',msg.text)
-redis:hdel(max..'replay_animation:group:',msg.text)
-redis:hdel(max..'replay_audio:group:',msg.text)
-redis:hdel(max..'replay_sticker:group:',msg.text)
-redis:hdel(max..'replay_video:group:',msg.text)
-redis:setex(max..'allreplay:'..msg.chat_id_..msg.sender_user_id_,300,msg.text)
+if redis:get(pikachu..'addrd_all:'..msg.chat_id_..msg.sender_user_id_) then -- استقبال الرد لكل المجموعات
+if not redis:get(pikachu..'allreplay:'..msg.chat_id_..msg.sender_user_id_) then -- استقبال كلمه الرد لكل المجموعات
+redis:hdel(pikachu..'replay_photo:group:',msg.text)
+redis:hdel(pikachu..'replay_voice:group:',msg.text)
+redis:hdel(pikachu..'replay_animation:group:',msg.text)
+redis:hdel(pikachu..'replay_audio:group:',msg.text)
+redis:hdel(pikachu..'replay_sticker:group:',msg.text)
+redis:hdel(pikachu..'replay_video:group:',msg.text)
+redis:setex(pikachu..'allreplay:'..msg.chat_id_..msg.sender_user_id_,300,msg.text)
 return sendMsg(msg.chat_id_,msg.id_,"📜┊جيد , يمكنك الان ارسال جوا ب الردالعام \n🔛┊[[ نص,صوره,فيديو,متحركه,بصمه,اغنيه ]]\n✓")
 end
 end
 
-if redis:get(max..'delrdall:'..msg.sender_user_id_) then
-redis:del(max..'delrdall:'..msg.sender_user_id_)
-local names = redis:hget(max..'replay:all',msg.text)
-local photo =redis:hget(max..'replay_photo:group:',msg.text)
-local voice = redis:hget(max..'replay_voice:group:',msg.text)
-local animation = redis:hget(max..'replay_animation:group:',msg.text)
-local audio = redis:hget(max..'replay_audio:group:',msg.text)
-local sticker = redis:hget(max..'replay_sticker:group:',msg.text)
-local video = redis:hget(max..'replay_video:group:',msg.text)
+if redis:get(pikachu..'delrdall:'..msg.sender_user_id_) then
+redis:del(pikachu..'delrdall:'..msg.sender_user_id_)
+local names = redis:hget(pikachu..'replay:all',msg.text)
+local photo =redis:hget(pikachu..'replay_photo:group:',msg.text)
+local voice = redis:hget(pikachu..'replay_voice:group:',msg.text)
+local animation = redis:hget(pikachu..'replay_animation:group:',msg.text)
+local audio = redis:hget(pikachu..'replay_audio:group:',msg.text)
+local sticker = redis:hget(pikachu..'replay_sticker:group:',msg.text)
+local video = redis:hget(pikachu..'replay_video:group:',msg.text)
 if not (names or photo or voice or animation or audio or sticker or video) then
 return sendMsg(msg.chat_id_,msg.id_,'💬*┊*هذا الرد ليس مضاف في قائمه الردود 📛')
 else
-redis:hdel(max..'replay:all',msg.text)
-redis:hdel(max..'replay_photo:group:',msg.text)
-redis:hdel(max..'replay_voice:group:',msg.text)
-redis:hdel(max..'replay_audio:group:',msg.text)
-redis:hdel(max..'replay_animation:group:',msg.text)
-redis:hdel(max..'replay_sticker:group:',msg.text)
-redis:hdel(max..'replay_video:group:',msg.text)
+redis:hdel(pikachu..'replay:all',msg.text)
+redis:hdel(pikachu..'replay_photo:group:',msg.text)
+redis:hdel(pikachu..'replay_voice:group:',msg.text)
+redis:hdel(pikachu..'replay_audio:group:',msg.text)
+redis:hdel(pikachu..'replay_animation:group:',msg.text)
+redis:hdel(pikachu..'replay_sticker:group:',msg.text)
+redis:hdel(pikachu..'replay_video:group:',msg.text)
 return sendMsg(msg.chat_id_,msg.id_,'('..Flter_Markdown(msg.text)..')\n  ✓ تم مسح الرد 🚀 ')
 end 
 end 
 
 
-if redis:get(max..'text_sudo:witting'..msg.sender_user_id_) then -- استقبال كليشه المطور
-redis:del(max..'text_sudo:witting'..msg.sender_user_id_) 
-redis:set(max..':TEXT_SUDO',Flter_Markdown(msg.text))
+if redis:get(pikachu..'text_sudo:witting'..msg.sender_user_id_) then -- استقبال كليشه المطور
+redis:del(pikachu..'text_sudo:witting'..msg.sender_user_id_) 
+redis:set(pikachu..':TEXT_SUDO',Flter_Markdown(msg.text))
 return sendMsg(msg.chat_id_,msg.id_, "📜*┇* تم وضع الكليشه بنجاح كلاتي 👋🏻\n\n*{*  "..Flter_Markdown(msg.text).."  *}*\n✓")
 end
-if redis:get(max..'welcom:witting'..msg.sender_user_id_) then -- استقبال كليشه الترحيب
-redis:del(max..'welcom:witting'..msg.sender_user_id_) 
-redis:set(max..'welcome:msg'..msg.chat_id_,msg.text)
+if redis:get(pikachu..'welcom:witting'..msg.sender_user_id_) then -- استقبال كليشه الترحيب
+redis:del(pikachu..'welcom:witting'..msg.sender_user_id_) 
+redis:set(pikachu..'welcome:msg'..msg.chat_id_,msg.text)
 return sendMsg(msg.chat_id_,msg.id_,"📜*┇* تم وضع الترحيب بنجاح كلاتي 👋\n✓" )
 end
-if redis:get(max..'rulse:witting'..msg.sender_user_id_) then --- استقبال القوانين
-redis:del(max..'rulse:witting'..msg.sender_user_id_) 
-redis:set(max..'rulse:msg'..msg.chat_id_,Flter_Markdown(msg.text)) 
+if redis:get(pikachu..'rulse:witting'..msg.sender_user_id_) then --- استقبال القوانين
+redis:del(pikachu..'rulse:witting'..msg.sender_user_id_) 
+redis:set(pikachu..'rulse:msg'..msg.chat_id_,Flter_Markdown(msg.text)) 
 return sendMsg(msg.chat_id_,msg.id_,'📜*┇* مرحبآ عزيزي\n📦┇تم حفظ القوانين بنجاح ✓\n🔖┇ارسل [[ القوانين ]] لعرضها \n💬✓')
 end
-if redis:get(max..'name:witting'..msg.sender_user_id_) then --- استقبال الاسم
-redis:del(max..'name:witting'..msg.sender_user_id_) 
+if redis:get(pikachu..'name:witting'..msg.sender_user_id_) then --- استقبال الاسم
+redis:del(pikachu..'name:witting'..msg.sender_user_id_) 
 tdcli_function({ID= "ChangeChatTitle",chat_id_=msg.chat_id_,title_=msg.text},dl_cb,nil)
 end
-if redis:get(max..'about:witting'..msg.sender_user_id_) then --- استقبال الوصف
-redis:del(max..'about:witting'..msg.sender_user_id_) 
+if redis:get(pikachu..'about:witting'..msg.sender_user_id_) then --- استقبال الوصف
+redis:del(pikachu..'about:witting'..msg.sender_user_id_) 
 tdcli_function({ID="ChangeChannelAbout",channel_id_=msg.chat_id_:gsub('-100',''),about_ = msg.text},function(arg,data) 
 if data.ID == "Ok" then 
 return sendMsg(msg.chat_id_,msg.id_,"📜*┇* تم وضع الوصف بنجاح\n✓")
@@ -2410,8 +2410,8 @@ end
 
 if redis:get(max..'fwd:all'..msg.sender_user_id_) then ---- استقبال رساله الاذاعه عام
 redis:del(max..'fwd:all'..msg.sender_user_id_)
-local pv = redis:smembers(max..'users')  
-local groups = redis:smembers(max..'group:ids')
+local pv = redis:smembers(pikachu..'users')  
+local groups = redis:smembers(pikachu..'group:ids')
 local allgp =  #pv + #groups
 if allgp >= 300 then
 sendMsg(msg.chat_id_,msg.id_,'📑┊اهلا عزيزي المطور \n🔖┊جاري نشر التوجيه للمجموعات وللمشتركين ...')			
@@ -2422,7 +2422,7 @@ if data.send_state_ and data.send_state_.ID == "MessageIsBeingSent"  then
 print("Sender Ok")
 else
 print("Rem user From list")
-redis:srem(max..'users',pv[i])
+redis:srem(pikachu..'users',pv[i])
 end
 end)
 end
@@ -2439,9 +2439,9 @@ end
 return sendMsg(msg.chat_id_,msg.id_,'📜*┊*تم اذاعه الكليشه بنجاح 🏌🏻\n🗣*┊*للمـجمـوعآت » ❴ *'..#groups..'* ❵ گروب \n👥*┇* للمـشـترگين » ❴ '..#pv..' ❵ مـشـترگ \n✓')
 end
 
-if redis:get(max..'fwd:pv'..msg.sender_user_id_) then ---- استقبال رساله الاذاعه خاص
-redis:del(max..'fwd:pv'..msg.sender_user_id_)
-local pv = redis:smembers(max..'users')
+if redis:get(pikachu..'fwd:pv'..msg.sender_user_id_) then ---- استقبال رساله الاذاعه خاص
+redis:del(pikachu..'fwd:pv'..msg.sender_user_id_)
+local pv = redis:smembers(pikachu..'users')
 if #pv >= 300 then
 sendMsg(msg.chat_id_,msg.id_,'📑┊اهلا عزيزي المطور \n🔖┊جاري نشر الرساله للمشتركين ...')			
 end
@@ -2452,7 +2452,7 @@ if data.send_state_ and data.send_state_.ID == "MessageIsBeingSent"  then
 print("Sender Ok")
 else
 print("Rem Group From list")
-redis:srem(max..'users',pv[i])
+redis:srem(pikachu..'users',pv[i])
 NumPvDel = NumPvDel + 1
 end
 if #pv == i then 
@@ -2463,9 +2463,9 @@ end)
 end
 end
 
-if redis:get(max..'fwd:groups'..msg.sender_user_id_) then ---- استقبال رساله الاذاعه خاص
-redis:del(max..'fwd:groups'..msg.sender_user_id_)
-local groups = redis:smembers(max..'group:ids')
+if redis:get(pikachu..'fwd:groups'..msg.sender_user_id_) then ---- استقبال رساله الاذاعه خاص
+redis:del(pikachu..'fwd:groups'..msg.sender_user_id_)
+local groups = redis:smembers(pikachu..'group:ids')
 if #groups >= 300 then
 sendMsg(msg.chat_id_,msg.id_,'📑┊اهلا عزيزي المطور \n🔖┊جاري نشر الرساله للمجموعات ...')			
 end
@@ -2493,8 +2493,8 @@ end
 end 
 end 
 
-if msg.adduser and msg.adduser == our_id and redis:get(max..':WELCOME_BOT') then
-sendPhoto(msg.chat_id_,msg.id_,redis:get(max..':WELCOME_BOT'),[[⚜┊اهلا انآ بوت آسـمـي ]]..redis:get(max..':NameBot:')..[[ ✓
+if msg.adduser and msg.adduser == our_id and redis:get(pikachu..':WELCOME_BOT') then
+sendPhoto(msg.chat_id_,msg.id_,redis:get(pikachu..':WELCOME_BOT'),[[⚜┊اهلا انآ بوت آسـمـي ]]..redis:get(pikachu..':NameBot:')..[[ ✓
 👨🏻‍✈️┊آختصـآصـي حمـآيهہ‌‏ آلمـجمـوعآت
 📛┊مـن آلسـبآم وآلتوجيهہ‌‏ وآلتگرآر وآلخ...
 
@@ -2503,10 +2503,10 @@ sendPhoto(msg.chat_id_,msg.id_,redis:get(max..':WELCOME_BOT'),[[⚜┊اهلا �
 return false
 end 
 
-if msg.forward_info and redis:get(max..'fwd:'..msg.sender_user_id_) then
-redis:del(max..'fwd:'..msg.sender_user_id_)
-local pv = redis:smembers(max..'users')
-local groups = redis:smembers(max..'group:ids')
+if msg.forward_info and redis:get(pikachu..'fwd:'..msg.sender_user_id_) then
+redis:del(pikachu..'fwd:'..msg.sender_user_id_)
+local pv = redis:smembers(pikachu..'users')
+local groups = redis:smembers(pikachu..'group:ids')
 local allgp =  #pv + #groups
 if allgp == 500 then
 sendMsg(msg.chat_id_,msg.id_,'📑┊اهلا عزيزي المطور \n🔖┊جاري نشر التوجيه للمجموعات وللمشتركين ...')			
@@ -2532,16 +2532,16 @@ return false
 end
 end
 
-if msg.photo and redis:get(max..'welcom_ph:witting'..msg.sender_user_id_) then
-redis:del(max..'welcom_ph:witting'..msg.sender_user_id_)
-redis:set(max..':WELCOME_BOT',photo_id)
+if msg.photo and redis:get(pikachu..'welcom_ph:witting'..msg.sender_user_id_) then
+redis:del(pikachu..'welcom_ph:witting'..msg.sender_user_id_)
+redis:set(pikachu..':WELCOME_BOT',photo_id)
 sendMsg(msg.chat_id_,msg.id_,'🚸┇تم تغيير صـورهہ‏‏ آلترحيب للبوت 🌿\n✓')
 return false
 end 
 
 if msg.photo and msg.type == "channel" and msg.GroupActive then
-if redis:get(max..'photo:group'..msg.chat_id_..msg.sender_user_id_) then
-redis:del(max..'photo:group'..msg.chat_id_..msg.sender_user_id_)
+if redis:get(pikachu..'photo:group'..msg.chat_id_..msg.sender_user_id_) then
+redis:del(pikachu..'photo:group'..msg.chat_id_..msg.sender_user_id_)
 tdcli_function({ID="ChangeChatPhoto",chat_id_=msg.chat_id_,photo_=GetInputFile(photo_id)},function(arg,data)
 if data.ID == "Ok" then
 elseif  data.code_ == 3 then
@@ -2558,37 +2558,37 @@ if msg.text then
 if redis:get(max..'addrd:'..msg.chat_id_..msg.sender_user_id_) then -- استقبال الرد للمجموعه فقط
 
 if not redis:get(max..'replay1'..msg.chat_id_..msg.sender_user_id_) then  -- كلمه الرد
-redis:hdel(max..'replay:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_photo:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_voice:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_animation:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_audio:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_sticker:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_video:group:'..msg.chat_id_,msg.text)
-redis:setex(max..'replay1'..msg.chat_id_..msg.sender_user_id_,300,msg.text)
+redis:hdel(pikachu..'replay:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_photo:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_voice:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_animation:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_audio:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_sticker:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_video:group:'..msg.chat_id_,msg.text)
+redis:setex(pikachu..'replay1'..msg.chat_id_..msg.sender_user_id_,300,msg.text)
 return sendMsg(msg.chat_id_,msg.id_,"📜┊جيد , يمكنك الان ارسال جواب الرد \n🔛┊[[ نص,صوره,فيديو,متحركه,بصمه,اغنيه ]]\n✓")
 end
 end
 
-if redis:get(max..'delrd:'..msg.sender_user_id_) then
-redis:del(max..'delrd:'..msg.sender_user_id_)
-local names 	= redis:hget(max..'replay:'..msg.chat_id_,msg.text)
-local photo 	= redis:hget(max..'replay_photo:group:'..msg.chat_id_,msg.text)
-local voice 	= redis:hget(max..'replay_voice:group:'..msg.chat_id_,msg.text)
-local animation = redis:hget(max..'replay_animation:group:'..msg.chat_id_,msg.text)
-local audio 	= redis:hget(max..'replay_audio:group:'..msg.chat_id_,msg.text)
-local sticker 	= redis:hget(max..'replay_sticker:group:'..msg.chat_id_,msg.text)
-local video 	= redis:hget(max..'replay_video:group:'..msg.chat_id_,msg.text)
+if redis:get(pikachu..'delrd:'..msg.sender_user_id_) then
+redis:del(pikachu..'delrd:'..msg.sender_user_id_)
+local names 	= redis:hget(pikachu..'replay:'..msg.chat_id_,msg.text)
+local photo 	= redis:hget(pikachu..'replay_photo:group:'..msg.chat_id_,msg.text)
+local voice 	= redis:hget(pikachu..'replay_voice:group:'..msg.chat_id_,msg.text)
+local animation = redis:hget(pikachu..'replay_animation:group:'..msg.chat_id_,msg.text)
+local audio 	= redis:hget(pikachu..'replay_audio:group:'..msg.chat_id_,msg.text)
+local sticker 	= redis:hget(pikachu..'replay_sticker:group:'..msg.chat_id_,msg.text)
+local video 	= redis:hget(pikachu..'replay_video:group:'..msg.chat_id_,msg.text)
 if not (names or photo or voice or animation or audio or sticker or video) then
 return sendMsg(msg.chat_id_,msg.id_,'💬*┊*هذا الرد ليس مضاف في قائمه الردود 📛')
 else
-redis:hdel(max..'replay:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_photo:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_voice:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_audio:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_animation:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_sticker:group:'..msg.chat_id_,msg.text)
-redis:hdel(max..'replay_video:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_photo:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_voice:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_audio:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_animation:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_sticker:group:'..msg.chat_id_,msg.text)
+redis:hdel(pikachu..'replay_video:group:'..msg.chat_id_,msg.text)
 return sendMsg(msg.chat_id_,msg.id_,'(['..msg.text..'])\n  ✓ تم مسح الرد 🚀 ')
 end 
 end
@@ -2620,7 +2620,7 @@ end,nil)
 end
 return false
 end
-redis:set(max..":MsgIDPin:"..msg.chat_id_,msg.id_)
+redis:set(pikachu..":MsgIDPin:"..msg.chat_id_,msg.id_)
 end
 
 if msg.content_.ID == "MessageChatChangePhoto" then
@@ -2632,17 +2632,17 @@ end
 
 if msg.content_.ID == "MessageChatChangeTitle" then
 GetUserID(msg.sender_user_id_,function(arg,data)
-redis:set(max..'group:name'..msg.chat_id_,msg.content_.title_)
+redis:set(pikachu..'group:name'..msg.chat_id_,msg.content_.title_)
 if data.username_ then UserName = "@"..data.username_ else UserName = "احد المشرفين" end
 
 return sendMsg(msg.chat_id_,msg.id_,"📡| قام  ["..UserName.."]\n📭┇بتغير اسم المجموعه  ✋\n🗯┇الى "..Flter_Markdown(msg.content_.title_).." \n✓") 
 end)
 end
 if msg.adduser or msg.joinuser then
-if redis:get(max..'mute_tgservice'..msg.chat_id_) then
+if redis:get(pikachu..'mute_tgservice'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_)
 else
-if redis:get(max..'welcome:get'..msg.chat_id_) then 
+if redis:get(pikachu..'welcome:get'..msg.chat_id_) then 
 if not msg.adduserType then
 GetUserID(msg.sender_user_id_,function(arg,data)  
 welcome = (redis:get(max..'welcome:msg'..msg.chat_id_) or "🙋🏻‍♂┇اهلن بك عزيزي {الاسم}\n🎟┇معرفك » {المعرف}\n{القوانين}\n\nالرجاء الالتزام بالقوانين ♥\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n⚜┇اسم الكروب » {المجموعه}")
@@ -2657,12 +2657,12 @@ sendMsg(msg.chat_id_,msg.id_,Flter_Markdown(welcome))
 end 
 end)
 else
-welcome = (redis:get(max..'welcome:msg'..msg.chat_id_) or "🙋🏻‍♂┇اهلن بك عزيزي {الاسم}\n🎟┇معرفك » {المعرف}\n{القوانين}\n\nالرجاء الالتزام بالقوانين ♥\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n⚜┇اسم الكروب » {المجموعه}")
+welcome = (redis:get(pikachu..'welcome:msg'..msg.chat_id_) or "🙋🏻‍♂┇اهلن بك عزيزي {الاسم}\n🎟┇معرفك » {المعرف}\n{القوانين}\n\nالرجاء الالتزام بالقوانين ♥\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n⚜┇اسم الكروب » {المجموعه}")
 if welcome then
-rules = (redis:get(max..'rulse:msg'..msg.chat_id_) or "👨🏻‍💻┇مرحبأ عزيري القوانين كلاتي 👇🏻\n♦️┇ممنوع نشر الروابط\n⚠️┇ممنوع التكلم او نشر صور اباحيه\n⚔┇ممنوع  اعاده توجيه\n💭┇ممنوع التكلم بلطائفه\n♥️┇الرجاء احترام المدراء والادمنيه ??\n")
+rules = (redis:get(pikachu..'rulse:msg'..msg.chat_id_) or "👨🏻‍💻┇مرحبأ عزيري القوانين كلاتي 👇🏻\n♦️┇ممنوع نشر الروابط\n⚠️┇ممنوع التكلم او نشر صور اباحيه\n⚔┇ممنوع  اعاده توجيه\n💭┇ممنوع التكلم بلطائفه\n♥️┇الرجاء احترام المدراء والادمنيه ??\n")
 welcome = welcome:gsub("{القوانين}", rules)
 if msg.addusername then UserName = '@'..msg.addusername else UserName = '< لا يوجد معرف >' end
-welcome = welcome:gsub("{المجموعه}",Flter_Markdown((redis:get(max..'group:name'..msg.chat_id_) or '')))
+welcome = welcome:gsub("{المجموعه}",Flter_Markdown((redis:get(pikachu..'group:name'..msg.chat_id_) or '')))
 local welcome = welcome:gsub("{المعرف}",UserName)
 local welcome = welcome:gsub("{الاسم}",FlterName(msg.addname,20))
 sendMsg(msg.chat_id_,msg.id_,Flter_Markdown(welcome))
@@ -2674,30 +2674,30 @@ end
 end 
 
 --------------------------------------------
-if msg.adduser and redis:get(max..'welcome:get'..msg.chat_id_) then
-local adduserx = tonumber(redis:get(max..'user:'..msg.sender_user_id_..':msgs') or 0)
+if msg.adduser and redis:get(pikachu..'welcome:get'..msg.chat_id_) then
+local adduserx = tonumber(redis:get(pikachu..'user:'..msg.sender_user_id_..':msgs') or 0)
 if adduserx > 3 then 
-redis:del(max..'welcome:get'..msg.chat_id_)
+redis:del(pikachu..'welcome:get'..msg.chat_id_)
 end
-redis:setex(max..'user:'..msg.sender_user_id_..':msgs',3,adduserx+1)
+redis:setex(pikachu..'user:'..msg.sender_user_id_..':msgs',3,adduserx+1)
 end
 
 if not msg.Admin and not msg.Special and not (msg.adduser or msg.joinuser or msg.deluser ) then -- للاعضاء فقط   
 
-if not msg.forward_info and redis:get(max..'lock_flood'..msg.chat_id_)  then
-local msgs = (redis:get(max..'user:'..msg.sender_user_id_..':msgs') or 0)
-local NUM_MSG_MAX = (redis:get(max..'num_msg_max'..msg.chat_id_) or 5)
+if not msg.forward_info and redis:get(pikachu..'lock_flood'..msg.chat_id_)  then
+local msgs = (redis:get(pikachu..'user:'..msg.sender_user_id_..':msgs') or 0)
+local NUM_MSG_pikachu = (redis:get(max..'num_msg_max'..msg.chat_id_) or 5)
 if tonumber(msgs) > tonumber(NUM_MSG_MAX) then 
 GetUserID(msg.sender_user_id_,function(arg,datau)
 Restrict(msg.chat_id_,msg.sender_user_id_,1)
-redis:setex(max..'sender:'..msg.sender_user_id_..':flood',30,true)
+redis:setex(pikachu..'sender:'..msg.sender_user_id_..':flood',30,true)
 if datau.username_ then USERNAME = '@'..datau.username_ else USERNAME = FlterName(datau.first_name_..' '..(datau.last_name_ or "")) end
 local USERCAR = utf8.len(USERNAME)
-SendMention(msg.chat_id_,datau.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USERNAME.."\n🚸┇قمـت بتگرآر آگثر مـن "..NUM_MSG_MAX.." رسـآلهہ‌‏ , لذآ تم تقييدگ مـن آلمـجمـوعهہ‌‏ ✓\n",12,USERCAR) 
+SendMention(msg.chat_id_,datau.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USERNAME.."\n🚸┇قمـت بتگرآر آگثر مـن "..NUM_MSG_pikachu.." رسـآلهہ‌‏ , لذآ تم تقييدگ مـن آلمـجمـوعهہ‌‏ ✓\n",12,USERCAR) 
 return false
 end)
 end 
-redis:setex(max..'user:'..msg.sender_user_id_..':msgs',2,msgs+1)
+redis:setex(pikachu..'user:'..msg.sender_user_id_..':msgs',2,msgs+1)
 end
  
  function Get_Info(msg,chat,user) --// ارسال نتيجة الصلاحيه
@@ -2729,25 +2729,25 @@ end
 end
 
 if msg.forward_info_ then
-if redis:get(max..'mute_forward'..msg.chat_id_) then -- قفل التوجيه
+if redis:get(pikachu..'mute_forward'..msg.chat_id_) then -- قفل التوجيه
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del Becuse Send Fwd \27[0m")
 
 if data.ID == "Error" and data.code_ == 6 then 
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) and not redis:get(max..':User_Fwd_Msg:'..msg.sender_user_id_..':flood') then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) and not redis:get(pikachu..':User_Fwd_Msg:'..msg.sender_user_id_..':flood') then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا ممنوع اعادة التوجيه  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
 local USERCAR = utf8.len(USERNAME)
 SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USERNAME..'\n'..msgx,12,USERCAR) 
-return redis:setex(max..':User_Fwd_Msg:'..msg.sender_user_id_..':flood',15,true)
+return redis:setex(pikachu..':User_Fwd_Msg:'..msg.sender_user_id_..':flood',15,true)
 end,nil)
 end
 end)
 return false
-elseif redis:get(max..':tqeed_fwd:'..msg.chat_id_) then
+elseif redis:get(pikachu..':tqeed_fwd:'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del Becuse Send Fwd tqeed \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
@@ -2763,7 +2763,7 @@ print("\27[1;31m Msg Del becuse send inline \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا الانلاين مقفول  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -2779,7 +2779,7 @@ print("\27[1;31m Msg Del becuse send long msg \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇ممنوع ارسال الكليشه والا سوف تجبرني على طردك  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -2810,13 +2810,13 @@ elseif(msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/")
 or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") 
 or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Oo][Rr][Gg]/") 
 or msg.text:match("[Tt].[Mm][Ee]/") or msg.text:match(".[Pp][Ee]")) 
-and redis:get(max..'lock_link'..msg.chat_id_) then
+and redis:get(pikachu..'lock_link'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send link \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇ممنوع ارسال الروابط  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -2831,7 +2831,7 @@ print("\27[1;31m Msg Del becuse send web link \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇ممنوع ارسال روابط الويب   \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -2846,7 +2846,7 @@ print("\27[1;31m Msg Del becuse send tag \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇ممنوع ارسال التاك  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -2861,7 +2861,7 @@ print("\27[1;31m Msg Del becuse send username \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇ممنوع ارسال المعرف   \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -2877,7 +2877,7 @@ print("\27[1;31m Msg Del becuse send markdown \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇ممنوع ارسال الماركدوان  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -2886,7 +2886,7 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif msg.textEntityTypeTextUrl and redis:get(max..'lock_webpage'..msg.chat_id_) then
+elseif msg.textEntityTypeTextUrl and redis:get(pikachu..'lock_webpage'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send web page \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
@@ -2908,7 +2908,7 @@ print("\27[1;31m Msg Del becuse send Edit \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذراً ممنوع التعديل تم المسح \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -2918,13 +2918,13 @@ end
 end)
 return false
 end 
-elseif msg.content_.ID == "MessageUnsupported" and redis:get(max..'mute_video'..msg.chat_id_) then -- قفل الفيديو
+elseif msg.content_.ID == "MessageUnsupported" and redis:get(pikachu..'mute_video'..msg.chat_id_) then -- قفل الفيديو
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send video \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا ممنوع ارسال الفيديو كام \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -2975,7 +2975,7 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif redis:get(max..':tqeed_video:'..msg.chat_id_) then
+elseif redis:get(pikachu..':tqeed_video:'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m The user restricted becuse send video \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
@@ -2985,7 +2985,7 @@ Restrict(msg.chat_id_,msg.sender_user_id_,3)
 end)
 return false
 end
-elseif msg.document and redis:get(max..'mute_document'..msg.chat_id_) then -- قفل الملفات
+elseif msg.document and redis:get(pikachu..'mute_document'..msg.chat_id_) then -- قفل الملفات
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send file \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
@@ -3000,13 +3000,13 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif msg.sticker and redis:get(max..'mute_sticker'..msg.chat_id_) then --قفل الملصقات
+elseif msg.sticker and redis:get(pikachu..'mute_sticker'..msg.chat_id_) then --قفل الملصقات
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send sticker \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا ممنوع ارسال الملصقات  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -3016,13 +3016,13 @@ end
 end)
 return false
 elseif msg.animation then
-if redis:get(max..'mute_gif'..msg.chat_id_) then -- قفل المتحركه
+if redis:get(pikachu..'mute_gif'..msg.chat_id_) then -- قفل المتحركه
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send gif \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا ممنوع ارسال الصور المتحركه  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -3031,7 +3031,7 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif redis:get(max..':tqeed_gif:'..msg.chat_id_) then
+elseif redis:get(pikachu..':tqeed_gif:'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m The user restricted becuse send gif \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
@@ -3041,13 +3041,13 @@ Restrict(msg.chat_id_,msg.sender_user_id_,3)
 end)
 return false
 end
-elseif msg.contact and redis:get(max..'mute_contact'..msg.chat_id_) then -- قفل الجهات
+elseif msg.contact and redis:get(pikachu..'mute_contact'..msg.chat_id_) then -- قفل الجهات
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send Contact \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
- if redis:get(max..'lock_woring'..msg.chat_id_) then
+ if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا ممنوع ارسال جهات الاتصال  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -3056,13 +3056,13 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif msg.location and redis:get(max..'mute_location'..msg.chat_id_) then -- قفل الموقع
+elseif msg.location and redis:get(pikachu..'mute_location'..msg.chat_id_) then -- قفل الموقع
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send location \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
- if redis:get(max..'lock_woring'..msg.chat_id_) then
+ if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا ممنوع ارسال الموقع  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -3071,7 +3071,7 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif msg.voice and redis:get(max..'mute_voice'..msg.chat_id_) then -- قفل البصمات
+elseif msg.voice and redis:get(pikachu..'mute_voice'..msg.chat_id_) then -- قفل البصمات
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send voice \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
@@ -3086,13 +3086,13 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif msg.game and redis:get(max..'mute_game'..msg.chat_id_) then -- قفل الالعاب
+elseif msg.game and redis:get(pikachu..'mute_game'..msg.chat_id_) then -- قفل الالعاب
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send game \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "┇┇عذرا ممنوع لعب الالعاب  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -3101,13 +3101,13 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif msg.audio and redis:get(max..'mute_audio'..msg.chat_id_) then -- قفل الصوت
+elseif msg.audio and redis:get(pikachu..'mute_audio'..msg.chat_id_) then -- قفل الصوت
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send audio \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا ممنوع ارسال الصوت  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -3116,13 +3116,13 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif msg.replyMarkupInlineKeyboard and redis:get(max..'mute_keyboard'..msg.chat_id_) then -- كيبورد
+elseif msg.replyMarkupInlineKeyboard and redis:get(pikachu..'mute_keyboard'..msg.chat_id_) then -- كيبورد
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send keyboard \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا الكيبورد مقفول  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -3165,7 +3165,7 @@ print("\27[1;31m Msg Del becuse send webpage caption \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local msgx = "♦️┇عذرا ممنوع ارسال روابط الويب  \n📛"
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -3174,13 +3174,13 @@ SendMention(msg.chat_id_,data.id_,msg.id_,"🙍🏻‍♂┇العضو » "..USE
 end
 end)
 return false
-elseif msg.content_.caption_:match("@[%a%d_]+") and redis:get(max..'lock_username'..msg.chat_id_) then
+elseif msg.content_.caption_:match("@[%a%d_]+") and redis:get(pikachu..'lock_username'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send username caption \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
 return sendMsg(msg.chat_id_,msg.id_,'📛*┇* لا يمكنني مسح الرساله المخالفه .\n🎟*┇* لست مشرف او ليس لدي صلاحيه  الحذف \n 💥')    
 end
-if redis:get(max..'lock_woring'..msg.chat_id_) then
+if redis:get(pikachu..'lock_woring'..msg.chat_id_) then
 local msgx = "♦️┇عذرا ممنوع ارسال التاك او المعرف  \n📛"
 GetUserID(msg.sender_user_id_,function(arg,data)
 if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
@@ -3197,89 +3197,89 @@ end
 SaveNumMsg(msg)
 ------------------------------{ Start Replay Send }------------------------
 
-if msg.text and redis:get(max..'replay'..msg.chat_id_) then
+if msg.text and redis:get(pikachu..'replay'..msg.chat_id_) then
 
 local Replay = false
 
- Replay = redis:hget(max..'replay:all',msg.text)
+ Replay = redis:hget(pikachu..'replay:all',msg.text)
 if Replay then
 sendMsg(msg.chat_id_,msg.id_,Replay)
 return false
 end
 
- Replay = redis:hget(max..'replay:'..msg.chat_id_,msg.text)
+ Replay = redis:hget(pikachu..'replay:'..msg.chat_id_,msg.text)
 if Replay then 
  sendMsg(msg.chat_id_,msg.id_,Replay) 
 return false
 end
- Replay = redis:hget(max..'replay_photo:group:',msg.text)
+ Replay = redis:hget(pikachu..'replay_photo:group:',msg.text)
 if Replay then 
  sendPhoto(msg.chat_id_,msg.id_,Replay)  
 return false
 end
 
-Replay = redis:hget(max..'replay_voice:group:',msg.text)
+Replay = redis:hget(pikachu..'replay_voice:group:',msg.text)
 if Replay then 
  sendVoice(msg.chat_id_,msg.id_,Replay)
 return false
 end
 
-Replay = redis:hget(max..'replay_animation:group:',msg.text)
+Replay = redis:hget(pikachu..'replay_animation:group:',msg.text)
 if Replay then 
  sendAnimation(msg.chat_id_,msg.id_,Replay)  
 return false
 end
 
-Replay = redis:hget(max..'replay_audio:group:',msg.text)
+Replay = redis:hget(pikachu..'replay_audio:group:',msg.text)
 if Replay then 
  sendAudio(msg.chat_id_,msg.id_,Replay)  
 return false
 end
 
-Replay = redis:hget(max..'replay_sticker:group:',msg.text)
+Replay = redis:hget(pikachu..'replay_sticker:group:',msg.text)
 if Replay then 
  sendSticker(msg.chat_id_,msg.id_,Replay)  
 return false
 end
 
-Replay = redis:hget(max..'replay_video:group:',msg.text)
+Replay = redis:hget(pikachu..'replay_video:group:',msg.text)
 if Replay then 
 print("0000000000000") 
  sendVideo(msg.chat_id_,msg.id_,Replay)
 return false
 end
 
-Replay = redis:hget(max..'replay_photo:group:'..msg.chat_id_,msg.text)
+Replay = redis:hget(pikachu..'replay_photo:group:'..msg.chat_id_,msg.text)
 if Replay then 
  sendPhoto(msg.chat_id_,msg.id_,Replay)  
 return false
 end
 
-Replay = redis:hget(max..'replay_voice:group:'..msg.chat_id_,msg.text)
+Replay = redis:hget(pikachu..'replay_voice:group:'..msg.chat_id_,msg.text)
 if Replay then 
  sendVoice(msg.chat_id_,msg.id_,Replay)
 return false
 end
 
-Replay = redis:hget(max..'replay_animation:group:'..msg.chat_id_,msg.text)
+Replay = redis:hget(pikachu..'replay_animation:group:'..msg.chat_id_,msg.text)
 if Replay then 
  sendAnimation(msg.chat_id_,msg.id_,Replay)  
 return false
 end
 
-Replay = redis:hget(max..'replay_audio:group:'..msg.chat_id_,msg.text)
+Replay = redis:hget(pikachu..'replay_audio:group:'..msg.chat_id_,msg.text)
 if Replay then 
  sendAudio(msg.chat_id_,msg.id_,Replay)  
 return false
 end
 
-Replay = redis:hget(max..'replay_sticker:group:'..msg.chat_id_,msg.text)
+Replay = redis:hget(pikachu..'replay_sticker:group:'..msg.chat_id_,msg.text)
 if Replay then 
  sendSticker(msg.chat_id_,msg.id_,Replay)  
 return false
 end
 
-Replay = redis:hget(max..'replay_video:group:'..msg.chat_id_,msg.text)
+Replay = redis:hget(pikachu..'replay_video:group:'..msg.chat_id_,msg.text)
 if Replay then 
  sendVideo(msg.chat_id_,msg.id_,Replay)
 return false
@@ -3567,7 +3567,7 @@ end
 
 ------------------------------{ Start Checking CheckExpire }------------------------
 
-if redis:get(max..'CheckExpire::'..msg.chat_id_) then
+if redis:get(pikachu..'CheckExpire::'..msg.chat_id_) then
 local ExpireDate = redis:ttl(max..'ExpireDate:'..msg.chat_id_)
 if not ExpireDate and not msg.SudoUser then
 rem_data_group(msg.chat_id_)
@@ -3575,7 +3575,7 @@ sendMsg(SUDO_ID,0,'🕵🏼️‍♀️┇انتهى الاشتراك في اح�
 sendMsg(msg.chat_id_,0,'🕵🏼️‍♀️┇انتهى الاشتراك البوت✋🏿\n💂🏻‍♀️┇سوف اغادر المجموعه فرصه سعيده 👋🏿\n👨🏾‍🔧┇او راسل المطور للتجديد '..SUDO_USER..' 🍃')
 return StatusLeft(msg.chat_id_,our_id)
 else
-local DaysEx = (redis:ttl(max..'ExpireDate:'..msg.chat_id_) / 86400)
+local DaysEx = (redis:ttl(pikachu..'ExpireDate:'..msg.chat_id_) / 86400)
 if tonumber(DaysEx) > 0.208 and ExpireDate ~= -1 and msg.Admin then
 if tonumber(DaysEx + 1) == 1 and not msg.SudoUser then
 sendMsg(msg.chat_id_,'🕵🏼️‍♀️┇باقي يوم واحد وينتهي الاشتراك ✋🏿\n👨🏾‍🔧┇راسل المطور للتجديد '..SUDO_USER..'\n📛')
