@@ -70,7 +70,7 @@ sudo rm -fr ../.telegram-cli
 done
 else
 
-if ! screen -list | grep -q "MAX"; then
+if ! screen -list | grep -q "max"; then
 screen -S pikachu ./run R
 fi
 screen -X -S pikachu kill
