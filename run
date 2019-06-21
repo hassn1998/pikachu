@@ -1,12 +1,12 @@
 #!/bin/bash 
 
 
-#        ▇▇▇                  ▇       ▇        ▇                              ▇▇¦ Source @Ha_ssin"          
-#        ▇▇        ▇          ▇       ▇   ▇             ▄▇                 ▇▇¦ Source @Ha_ssin"
-#        ▇▇          ▇        ▇       ▇▇            ▄▇▄▄▇           ▇▇¦ Source @Ha_ssin"                  
-#        ▇▇     ▇             ▇       ▇   ▇         ▄▇      ▇▄           ▇▇¦ Source @Ha_ssin"           
-#        ▇▇                    ▇       ▇       ▇     ▄▇      ▇▄        ▇▇¦ Source @Ha_ssin"       
-#        ▇▇                    ▇       ▇              ▇▇     ▄▇      ▇▇¦ Source @Ha_ssin" 
+#        ▇▇▇                  ▇       ▇        ▇                              ▇▇¦ Source @llsst"          
+#        ▇▇        ▇          ▇       ▇   ▇             ▄▇                 ▇▇¦ Source @llsst"
+#        ▇▇          ▇        ▇       ▇▇            ▄▇▄▄▇           ▇▇¦ Source @llsst"                  
+#        ▇▇     ▇             ▇       ▇   ▇         ▄▇      ▇▄           ▇▇¦ Source @llsst"           
+#        ▇▇                    ▇       ▇       ▇     ▄▇      ▇▄        ▇▇¦ Source @llsst"       
+#        ▇▇                    ▇       ▇              ▇▇     ▄▇      ▇▇¦ Source @llsst" 
 #---------------------------------------------------------------------
 cd $(cd $(dirname $0); pwd)
  
@@ -22,12 +22,12 @@ Version=`lsb_release -rs | cut -f1 -d"."`
 
 if [ "$Version" == "18" ];then
 echo -e "${GREEN}
-echo -e "▇▇▇                  ▇       ▇        ▇                              ▇▇¦ Source @Ha_ssin"          
-echo -e "▇▇        ▇          ▇       ▇   ▇             ▄▇                 ▇▇¦ Source @Ha_ssin"
-echo -e "▇▇          ▇        ▇       ▇▇            ▄▇▄▄▇           ▇▇¦ Source @Ha_ssin"                  
-echo -e "▇▇     ▇             ▇       ▇   ▇         ▄▇      ▇▄           ▇▇¦ Source @Ha_ssin"           
-echo -e "▇▇                    ▇       ▇       ▇     ▄▇      ▇▄        ▇▇¦ Source @Ha_ssin"       
-echo -e "▇▇                    ▇       ▇              ▇▇     ▄▇      ▇▇¦ Source @Ha_ssin"  
+echo -e "▇▇▇                  ▇       ▇        ▇                              ▇▇¦ Source @llsst"          
+echo -e "▇▇        ▇          ▇       ▇   ▇             ▄▇                 ▇▇¦ Source @llsst"
+echo -e "▇▇          ▇        ▇       ▇▇            ▄▇▄▄▇           ▇▇¦ Source @llsst"                  
+echo -e "▇▇     ▇             ▇       ▇   ▇         ▄▇      ▇▄           ▇▇¦ Source @llsst"           
+echo -e "▇▇                    ▇       ▇       ▇     ▄▇      ▇▄        ▇▇¦ Source @llsst"       
+echo -e "▇▇                    ▇       ▇              ▇▇     ▄▇      ▇▇¦ Source @llsst"  
 echo -e "----------------------------------------------------------------------${CNIL}"
 echo -e "${RED}| للاسف لايمكنك تنصيب السورس ع نظام اوبنتو {${Version}} يجب ان يكون على اصدار  اقل مثلا  ${SMAY}14 او 16
 ${CNIL}";
